@@ -7,4 +7,5 @@ See the notes about preprocessing the data.
 # Train the first model (multi-task multi-label classification model).
 cd rxn_yield_context/train_multilabel/
 
-
+# Use the trained model to predict
+cd rxn_yield_context/evaluate_model

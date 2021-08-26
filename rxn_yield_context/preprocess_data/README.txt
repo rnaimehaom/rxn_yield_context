@@ -1,5 +1,5 @@
 # Simple Usage Examples
-# "Convert a chemical name to SMILES"
+"Convert a chemical name to SMILES"
 
 
 (1) preprocess raw Reaxys .xlsx to .txt files:
