@@ -10,7 +10,7 @@ import pubchempy as pcp
 import time
 import re
 from chemspipy import ChemSpider
-cs = ChemSpider('2CCdzprbsgWZAUh5N9yhJtsGOYNIoJiz')
+cs = ChemSpider('Your ChemSpider key')
 
 def PCPconvert(name):
     s = pcp.get_compounds(name,'name')

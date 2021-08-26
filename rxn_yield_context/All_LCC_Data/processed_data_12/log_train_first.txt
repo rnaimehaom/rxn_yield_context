@@ -1,0 +1,2336 @@
+Multitask_Multilabel(
+  (sigmoid): Sigmoid()
+  (ffn_share): Sequential(
+    (0): Linear(in_features=8192, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+  )
+  (ffn_reagent): Sequential(
+    (0): Linear(in_features=512, out_features=300, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=300, out_features=1539, bias=True)
+  )
+  (ffn_solvent): Sequential(
+    (0): Linear(in_features=512, out_features=100, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=100, out_features=92, bias=True)
+  )
+  (criterion): FocalLoss()
+)
+batch size: 512
+epoches: 100
+data lengeth: 100864
+dropout probabilty: 0.5
+weight decay for optmizer: 0.0001
+initial learning rate: 1e-05
+max learning rate: 0.01
+final learning rate: 0.0001
+warm up epochs: 4.0
+Model save path: /home/lungyi/rxn_yield_context/rxn_yield_context/save_model/first_model_12_final_3
+Model device: cuda
+fingerprint size: 4096
+fingerprint radius: 2
+alpha weighing factor: 0.5
+gamma modulating factor: 2
+Learning Rate: [2.267766497461929e-05]
+--------------- Validate ---------------
+
+epoch: 1
+Overall two tasks of validation avg_BCE_loss: 4.51892
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.21953, avg. recall: 0.22555, avg. number of preds: 0.60
+cutoff = 0.4, avg. accuracy: 0.39793, avg. recall: 0.47823, avg. number of preds: 1.62
+cutoff = 0.3, avg. accuracy: 0.28792, avg. recall: 0.77176, avg. number of preds: 4.62
+cutoff = 0.2, avg. accuracy: 0.16843, avg. recall: 0.91419, avg. number of preds: 9.17
+cutoff = 0.1, avg. accuracy: 0.11343, avg. recall: 0.96579, avg. number of preds: 16.73
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.00085, avg. recall: 0.00095, avg. number of preds: 0.00
+cutoff = 0.4, avg. accuracy: 0.19413, avg. recall: 0.31542, avg. number of preds: 1.63
+cutoff = 0.3, avg. accuracy: 0.19883, avg. recall: 0.56417, avg. number of preds: 4.64
+cutoff = 0.2, avg. accuracy: 0.15904, avg. recall: 0.67555, avg. number of preds: 9.53
+cutoff = 0.1, avg. accuracy: 0.05855, avg. recall: 0.81760, avg. number of preds: 44.81
+--------------------
+std of solvent:  1.6750651597976685
+std of reagent:  1.6609779596328735
+--------------------------------------------------
+
+Learning Rate: [0.0025201776649746194]
+--------------- Validate ---------------
+
+epoch: 2
+Overall two tasks of validation avg_BCE_loss: 4.09629
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.33804, avg. recall: 0.34864, avg. number of preds: 0.84
+cutoff = 0.4, avg. accuracy: 0.46739, avg. recall: 0.56615, avg. number of preds: 1.71
+cutoff = 0.3, avg. accuracy: 0.32874, avg. recall: 0.82137, avg. number of preds: 4.33
+cutoff = 0.2, avg. accuracy: 0.20627, avg. recall: 0.93343, avg. number of preds: 7.89
+cutoff = 0.1, avg. accuracy: 0.12428, avg. recall: 0.97792, avg. number of preds: 14.99
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.12231, avg. recall: 0.12505, avg. number of preds: 0.32
+cutoff = 0.4, avg. accuracy: 0.29957, avg. recall: 0.46504, avg. number of preds: 2.15
+cutoff = 0.3, avg. accuracy: 0.25240, avg. recall: 0.65279, avg. number of preds: 4.78
+cutoff = 0.2, avg. accuracy: 0.18397, avg. recall: 0.76525, avg. number of preds: 9.36
+cutoff = 0.1, avg. accuracy: 0.06862, avg. recall: 0.89755, avg. number of preds: 41.84
+--------------------
+std of solvent:  1.644741177558899
+std of reagent:  1.6692235469818115
+--------------------------------------------------
+
+Learning Rate: [0.005017677664974619]
+--------------- Validate ---------------
+
+epoch: 3
+Overall two tasks of validation avg_BCE_loss: 3.83686
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.40444, avg. recall: 0.41814, avg. number of preds: 0.97
+cutoff = 0.4, avg. accuracy: 0.49825, avg. recall: 0.63392, avg. number of preds: 1.90
+cutoff = 0.3, avg. accuracy: 0.36804, avg. recall: 0.87458, avg. number of preds: 4.56
+cutoff = 0.2, avg. accuracy: 0.20595, avg. recall: 0.95437, avg. number of preds: 8.50
+cutoff = 0.1, avg. accuracy: 0.12295, avg. recall: 0.98530, avg. number of preds: 16.21
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.20746, avg. recall: 0.21655, avg. number of preds: 0.49
+cutoff = 0.4, avg. accuracy: 0.37156, avg. recall: 0.53248, avg. number of preds: 2.15
+cutoff = 0.3, avg. accuracy: 0.29355, avg. recall: 0.73526, avg. number of preds: 5.03
+cutoff = 0.2, avg. accuracy: 0.16302, avg. recall: 0.85359, avg. number of preds: 12.18
+cutoff = 0.1, avg. accuracy: 0.06209, avg. recall: 0.94950, avg. number of preds: 52.59
+--------------------
+std of solvent:  1.56513512134552
+std of reagent:  1.680769920349121
+--------------------------------------------------
+
+Learning Rate: [0.007515177664974619]
+--------------- Validate ---------------
+
+epoch: 4
+Overall two tasks of validation avg_BCE_loss: 3.72533
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.40584, avg. recall: 0.42617, avg. number of preds: 0.98
+cutoff = 0.4, avg. accuracy: 0.50974, avg. recall: 0.63616, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.38513, avg. recall: 0.87062, avg. number of preds: 4.36
+cutoff = 0.2, avg. accuracy: 0.21814, avg. recall: 0.95867, avg. number of preds: 8.51
+cutoff = 0.1, avg. accuracy: 0.12221, avg. recall: 0.98757, avg. number of preds: 16.68
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.25590, avg. recall: 0.26824, avg. number of preds: 0.62
+cutoff = 0.4, avg. accuracy: 0.40004, avg. recall: 0.55687, avg. number of preds: 2.14
+cutoff = 0.3, avg. accuracy: 0.32035, avg. recall: 0.75198, avg. number of preds: 4.85
+cutoff = 0.2, avg. accuracy: 0.17950, avg. recall: 0.86781, avg. number of preds: 11.69
+cutoff = 0.1, avg. accuracy: 0.07299, avg. recall: 0.95562, avg. number of preds: 49.20
+--------------------
+std of solvent:  1.4748793840408325
+std of reagent:  1.695565938949585
+--------------------------------------------------
+
+Learning Rate: [0.009997565244532535]
+--------------- Validate ---------------
+
+epoch: 5
+Overall two tasks of validation avg_BCE_loss: 3.62412
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.41909, avg. recall: 0.43465, avg. number of preds: 0.96
+cutoff = 0.4, avg. accuracy: 0.53353, avg. recall: 0.66387, avg. number of preds: 1.82
+cutoff = 0.3, avg. accuracy: 0.39926, avg. recall: 0.86758, avg. number of preds: 4.13
+cutoff = 0.2, avg. accuracy: 0.24151, avg. recall: 0.95573, avg. number of preds: 7.78
+cutoff = 0.1, avg. accuracy: 0.13278, avg. recall: 0.98792, avg. number of preds: 15.35
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.29450, avg. recall: 0.30811, avg. number of preds: 0.71
+cutoff = 0.4, avg. accuracy: 0.40730, avg. recall: 0.58782, avg. number of preds: 2.27
+cutoff = 0.3, avg. accuracy: 0.31944, avg. recall: 0.75964, avg. number of preds: 4.59
+cutoff = 0.2, avg. accuracy: 0.18849, avg. recall: 0.87335, avg. number of preds: 10.17
+cutoff = 0.1, avg. accuracy: 0.08251, avg. recall: 0.95717, avg. number of preds: 40.06
+--------------------
+std of solvent:  1.4190160036087036
+std of reagent:  1.7115681171417236
+--------------------------------------------------
+
+Learning Rate: [0.009529298116241373]
+--------------- Validate ---------------
+
+epoch: 6
+Overall two tasks of validation avg_BCE_loss: 3.57562
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.42561, avg. recall: 0.44388, avg. number of preds: 0.97
+cutoff = 0.4, avg. accuracy: 0.53794, avg. recall: 0.66405, avg. number of preds: 1.81
+cutoff = 0.3, avg. accuracy: 0.40266, avg. recall: 0.88016, avg. number of preds: 4.23
+cutoff = 0.2, avg. accuracy: 0.23556, avg. recall: 0.96150, avg. number of preds: 8.15
+cutoff = 0.1, avg. accuracy: 0.12578, avg. recall: 0.98888, avg. number of preds: 16.12
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.31102, avg. recall: 0.32790, avg. number of preds: 0.75
+cutoff = 0.4, avg. accuracy: 0.43376, avg. recall: 0.59695, avg. number of preds: 2.22
+cutoff = 0.3, avg. accuracy: 0.33469, avg. recall: 0.78050, avg. number of preds: 4.90
+cutoff = 0.2, avg. accuracy: 0.19040, avg. recall: 0.89062, avg. number of preds: 11.26
+cutoff = 0.1, avg. accuracy: 0.07251, avg. recall: 0.96239, avg. number of preds: 43.24
+--------------------
+std of solvent:  1.387784719467163
+std of reagent:  1.7249313592910767
+--------------------------------------------------
+
+Learning Rate: [0.009082963738382419]
+--------------- Validate ---------------
+
+epoch: 7
+Overall two tasks of validation avg_BCE_loss: 3.53050
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.43095, avg. recall: 0.44764, avg. number of preds: 0.94
+cutoff = 0.4, avg. accuracy: 0.55706, avg. recall: 0.67732, avg. number of preds: 1.80
+cutoff = 0.3, avg. accuracy: 0.42324, avg. recall: 0.88067, avg. number of preds: 4.05
+cutoff = 0.2, avg. accuracy: 0.24730, avg. recall: 0.96269, avg. number of preds: 7.93
+cutoff = 0.1, avg. accuracy: 0.12927, avg. recall: 0.99100, avg. number of preds: 16.28
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.33023, avg. recall: 0.34612, avg. number of preds: 0.78
+cutoff = 0.4, avg. accuracy: 0.43740, avg. recall: 0.62122, avg. number of preds: 2.31
+cutoff = 0.3, avg. accuracy: 0.33699, avg. recall: 0.78589, avg. number of preds: 4.73
+cutoff = 0.2, avg. accuracy: 0.19712, avg. recall: 0.89007, avg. number of preds: 10.39
+cutoff = 0.1, avg. accuracy: 0.07836, avg. recall: 0.96663, avg. number of preds: 41.24
+--------------------
+std of solvent:  1.363397240638733
+std of reagent:  1.735599160194397
+--------------------------------------------------
+
+Learning Rate: [0.008657534822229947]
+--------------- Validate ---------------
+
+epoch: 8
+Overall two tasks of validation avg_BCE_loss: 3.49741
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.47125, avg. recall: 0.49241, avg. number of preds: 1.06
+cutoff = 0.4, avg. accuracy: 0.56120, avg. recall: 0.68911, avg. number of preds: 1.83
+cutoff = 0.3, avg. accuracy: 0.43092, avg. recall: 0.87359, avg. number of preds: 3.87
+cutoff = 0.2, avg. accuracy: 0.26077, avg. recall: 0.95534, avg. number of preds: 7.27
+cutoff = 0.1, avg. accuracy: 0.14173, avg. recall: 0.98786, avg. number of preds: 14.41
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.31420, avg. recall: 0.32765, avg. number of preds: 0.71
+cutoff = 0.4, avg. accuracy: 0.44609, avg. recall: 0.60874, avg. number of preds: 2.17
+cutoff = 0.3, avg. accuracy: 0.34918, avg. recall: 0.77948, avg. number of preds: 4.58
+cutoff = 0.2, avg. accuracy: 0.20761, avg. recall: 0.88363, avg. number of preds: 9.78
+cutoff = 0.1, avg. accuracy: 0.08580, avg. recall: 0.96009, avg. number of preds: 35.59
+--------------------
+std of solvent:  1.3478057384490967
+std of reagent:  1.7438210248947144
+--------------------------------------------------
+
+Learning Rate: [0.00825203219532752]
+--------------- Validate ---------------
+
+epoch: 9
+Overall two tasks of validation avg_BCE_loss: 3.46685
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.47189, avg. recall: 0.49498, avg. number of preds: 1.04
+cutoff = 0.4, avg. accuracy: 0.56228, avg. recall: 0.67851, avg. number of preds: 1.78
+cutoff = 0.3, avg. accuracy: 0.44432, avg. recall: 0.87205, avg. number of preds: 3.75
+cutoff = 0.2, avg. accuracy: 0.27259, avg. recall: 0.96010, avg. number of preds: 7.30
+cutoff = 0.1, avg. accuracy: 0.14292, avg. recall: 0.98971, avg. number of preds: 15.08
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.32743, avg. recall: 0.33775, avg. number of preds: 0.72
+cutoff = 0.4, avg. accuracy: 0.46180, avg. recall: 0.62557, avg. number of preds: 2.21
+cutoff = 0.3, avg. accuracy: 0.34055, avg. recall: 0.80461, avg. number of preds: 5.08
+cutoff = 0.2, avg. accuracy: 0.20146, avg. recall: 0.90056, avg. number of preds: 11.11
+cutoff = 0.1, avg. accuracy: 0.07952, avg. recall: 0.96888, avg. number of preds: 43.57
+--------------------
+std of solvent:  1.3326417207717896
+std of reagent:  1.7494943141937256
+--------------------------------------------------
+
+Learning Rate: [0.007865522547812545]
+--------------- Validate ---------------
+
+epoch: 10
+Overall two tasks of validation avg_BCE_loss: 3.45163
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.49276, avg. recall: 0.52078, avg. number of preds: 1.12
+cutoff = 0.4, avg. accuracy: 0.56674, avg. recall: 0.69546, avg. number of preds: 1.84
+cutoff = 0.3, avg. accuracy: 0.45711, avg. recall: 0.87593, avg. number of preds: 3.71
+cutoff = 0.2, avg. accuracy: 0.28218, avg. recall: 0.95943, avg. number of preds: 7.04
+cutoff = 0.1, avg. accuracy: 0.14586, avg. recall: 0.98991, avg. number of preds: 14.30
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.35415, avg. recall: 0.37038, avg. number of preds: 0.81
+cutoff = 0.4, avg. accuracy: 0.45859, avg. recall: 0.64279, avg. number of preds: 2.30
+cutoff = 0.3, avg. accuracy: 0.33949, avg. recall: 0.80527, avg. number of preds: 4.80
+cutoff = 0.2, avg. accuracy: 0.20332, avg. recall: 0.89537, avg. number of preds: 9.93
+cutoff = 0.1, avg. accuracy: 0.08254, avg. recall: 0.96479, avg. number of preds: 37.26
+--------------------
+std of solvent:  1.322791576385498
+std of reagent:  1.7536263465881348
+--------------------------------------------------
+
+Learning Rate: [0.007497116284298754]
+--------------- Validate ---------------
+
+epoch: 11
+Overall two tasks of validation avg_BCE_loss: 3.41039
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.48668, avg. recall: 0.50860, avg. number of preds: 1.04
+cutoff = 0.4, avg. accuracy: 0.57934, avg. recall: 0.70683, avg. number of preds: 1.83
+cutoff = 0.3, avg. accuracy: 0.45352, avg. recall: 0.88744, avg. number of preds: 3.87
+cutoff = 0.2, avg. accuracy: 0.27929, avg. recall: 0.96326, avg. number of preds: 7.35
+cutoff = 0.1, avg. accuracy: 0.14194, avg. recall: 0.99161, avg. number of preds: 15.17
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.33540, avg. recall: 0.34846, avg. number of preds: 0.75
+cutoff = 0.4, avg. accuracy: 0.46253, avg. recall: 0.61776, avg. number of preds: 2.12
+cutoff = 0.3, avg. accuracy: 0.36144, avg. recall: 0.79685, avg. number of preds: 4.60
+cutoff = 0.2, avg. accuracy: 0.20802, avg. recall: 0.89901, avg. number of preds: 10.14
+cutoff = 0.1, avg. accuracy: 0.08524, avg. recall: 0.96627, avg. number of preds: 37.98
+--------------------
+std of solvent:  1.3106645345687866
+std of reagent:  1.7547543048858643
+--------------------------------------------------
+
+Learning Rate: [0.007145965476372454]
+--------------- Validate ---------------
+
+epoch: 12
+Overall two tasks of validation avg_BCE_loss: 3.40545
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.48953, avg. recall: 0.51233, avg. number of preds: 1.07
+cutoff = 0.4, avg. accuracy: 0.58109, avg. recall: 0.69890, avg. number of preds: 1.79
+cutoff = 0.3, avg. accuracy: 0.46327, avg. recall: 0.88135, avg. number of preds: 3.71
+cutoff = 0.2, avg. accuracy: 0.28337, avg. recall: 0.96258, avg. number of preds: 7.19
+cutoff = 0.1, avg. accuracy: 0.14297, avg. recall: 0.99187, avg. number of preds: 14.88
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.34706, avg. recall: 0.36179, avg. number of preds: 0.79
+cutoff = 0.4, avg. accuracy: 0.46388, avg. recall: 0.62711, avg. number of preds: 2.21
+cutoff = 0.3, avg. accuracy: 0.35625, avg. recall: 0.79874, avg. number of preds: 4.70
+cutoff = 0.2, avg. accuracy: 0.20571, avg. recall: 0.89514, avg. number of preds: 10.01
+cutoff = 0.1, avg. accuracy: 0.08875, avg. recall: 0.96452, avg. number of preds: 35.31
+--------------------
+std of solvent:  1.3044813871383667
+std of reagent:  1.7560210227966309
+--------------------------------------------------
+
+Learning Rate: [0.006811261910990003]
+--------------- Validate ---------------
+
+epoch: 13
+Overall two tasks of validation avg_BCE_loss: 3.37939
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.51872, avg. recall: 0.54432, avg. number of preds: 1.13
+cutoff = 0.4, avg. accuracy: 0.58596, avg. recall: 0.71116, avg. number of preds: 1.83
+cutoff = 0.3, avg. accuracy: 0.47336, avg. recall: 0.88186, avg. number of preds: 3.63
+cutoff = 0.2, avg. accuracy: 0.29546, avg. recall: 0.95973, avg. number of preds: 6.94
+cutoff = 0.1, avg. accuracy: 0.14782, avg. recall: 0.99131, avg. number of preds: 14.69
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.34990, avg. recall: 0.36207, avg. number of preds: 0.78
+cutoff = 0.4, avg. accuracy: 0.46742, avg. recall: 0.61800, avg. number of preds: 2.10
+cutoff = 0.3, avg. accuracy: 0.36282, avg. recall: 0.79717, avg. number of preds: 4.53
+cutoff = 0.2, avg. accuracy: 0.20728, avg. recall: 0.89929, avg. number of preds: 9.74
+cutoff = 0.1, avg. accuracy: 0.08296, avg. recall: 0.96534, avg. number of preds: 34.04
+--------------------
+std of solvent:  1.2947700023651123
+std of reagent:  1.756076693534851
+--------------------------------------------------
+
+Learning Rate: [0.006492235230284665]
+--------------- Validate ---------------
+
+epoch: 14
+Overall two tasks of validation avg_BCE_loss: 3.36133
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.51164, avg. recall: 0.53389, avg. number of preds: 1.09
+cutoff = 0.4, avg. accuracy: 0.59419, avg. recall: 0.71685, avg. number of preds: 1.81
+cutoff = 0.3, avg. accuracy: 0.46908, avg. recall: 0.88484, avg. number of preds: 3.65
+cutoff = 0.2, avg. accuracy: 0.28967, avg. recall: 0.96350, avg. number of preds: 6.92
+cutoff = 0.1, avg. accuracy: 0.14188, avg. recall: 0.99122, avg. number of preds: 14.57
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.36575, avg. recall: 0.38243, avg. number of preds: 0.84
+cutoff = 0.4, avg. accuracy: 0.47059, avg. recall: 0.63553, avg. number of preds: 2.17
+cutoff = 0.3, avg. accuracy: 0.36490, avg. recall: 0.80209, avg. number of preds: 4.45
+cutoff = 0.2, avg. accuracy: 0.20862, avg. recall: 0.90225, avg. number of preds: 9.68
+cutoff = 0.1, avg. accuracy: 0.08239, avg. recall: 0.96800, avg. number of preds: 34.06
+--------------------
+std of solvent:  1.2875224351882935
+std of reagent:  1.753629207611084
+--------------------------------------------------
+
+Learning Rate: [0.0061881511585014206]
+--------------- Validate ---------------
+
+epoch: 15
+Overall two tasks of validation avg_BCE_loss: 3.34622
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.51183, avg. recall: 0.53400, avg. number of preds: 1.09
+cutoff = 0.4, avg. accuracy: 0.59783, avg. recall: 0.71365, avg. number of preds: 1.79
+cutoff = 0.3, avg. accuracy: 0.48153, avg. recall: 0.88625, avg. number of preds: 3.64
+cutoff = 0.2, avg. accuracy: 0.29328, avg. recall: 0.96294, avg. number of preds: 6.97
+cutoff = 0.1, avg. accuracy: 0.14811, avg. recall: 0.99012, avg. number of preds: 14.29
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.34803, avg. recall: 0.36001, avg. number of preds: 0.76
+cutoff = 0.4, avg. accuracy: 0.48055, avg. recall: 0.61164, avg. number of preds: 1.99
+cutoff = 0.3, avg. accuracy: 0.37448, avg. recall: 0.78900, avg. number of preds: 4.35
+cutoff = 0.2, avg. accuracy: 0.22023, avg. recall: 0.89576, avg. number of preds: 9.26
+cutoff = 0.1, avg. accuracy: 0.08784, avg. recall: 0.96584, avg. number of preds: 32.81
+--------------------
+std of solvent:  1.283239483833313
+std of reagent:  1.7525817155838013
+--------------------------------------------------
+
+Learning Rate: [0.005898309811978797]
+--------------- Validate ---------------
+
+epoch: 16
+Overall two tasks of validation avg_BCE_loss: 3.33838
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.52059, avg. recall: 0.54476, avg. number of preds: 1.12
+cutoff = 0.4, avg. accuracy: 0.60217, avg. recall: 0.72324, avg. number of preds: 1.82
+cutoff = 0.3, avg. accuracy: 0.48754, avg. recall: 0.88803, avg. number of preds: 3.60
+cutoff = 0.2, avg. accuracy: 0.30559, avg. recall: 0.96219, avg. number of preds: 6.74
+cutoff = 0.1, avg. accuracy: 0.15308, avg. recall: 0.99109, avg. number of preds: 14.32
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.36301, avg. recall: 0.37735, avg. number of preds: 0.84
+cutoff = 0.4, avg. accuracy: 0.46257, avg. recall: 0.63127, avg. number of preds: 2.24
+cutoff = 0.3, avg. accuracy: 0.37216, avg. recall: 0.78642, avg. number of preds: 4.31
+cutoff = 0.2, avg. accuracy: 0.22255, avg. recall: 0.90031, avg. number of preds: 9.51
+cutoff = 0.1, avg. accuracy: 0.08799, avg. recall: 0.96766, avg. number of preds: 33.86
+--------------------
+std of solvent:  1.2740912437438965
+std of reagent:  1.7497583627700806
+--------------------------------------------------
+
+Learning Rate: [0.005622044088287984]
+--------------- Validate ---------------
+
+epoch: 17
+Overall two tasks of validation avg_BCE_loss: 3.33032
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.51230, avg. recall: 0.53510, avg. number of preds: 1.09
+cutoff = 0.4, avg. accuracy: 0.60037, avg. recall: 0.71692, avg. number of preds: 1.79
+cutoff = 0.3, avg. accuracy: 0.47981, avg. recall: 0.89243, avg. number of preds: 3.65
+cutoff = 0.2, avg. accuracy: 0.30354, avg. recall: 0.96377, avg. number of preds: 6.77
+cutoff = 0.1, avg. accuracy: 0.15303, avg. recall: 0.99134, avg. number of preds: 14.08
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.34943, avg. recall: 0.36239, avg. number of preds: 0.77
+cutoff = 0.4, avg. accuracy: 0.47589, avg. recall: 0.62219, avg. number of preds: 2.09
+cutoff = 0.3, avg. accuracy: 0.37493, avg. recall: 0.79453, avg. number of preds: 4.39
+cutoff = 0.2, avg. accuracy: 0.21799, avg. recall: 0.89660, avg. number of preds: 9.45
+cutoff = 0.1, avg. accuracy: 0.08730, avg. recall: 0.96532, avg. number of preds: 33.10
+--------------------
+std of solvent:  1.2685236930847168
+std of reagent:  1.7467643022537231
+--------------------------------------------------
+
+Learning Rate: [0.005358718130821626]
+--------------- Validate ---------------
+
+epoch: 18
+Overall two tasks of validation avg_BCE_loss: 3.33307
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.51843, avg. recall: 0.54220, avg. number of preds: 1.10
+cutoff = 0.4, avg. accuracy: 0.60274, avg. recall: 0.73076, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.48078, avg. recall: 0.89357, avg. number of preds: 3.70
+cutoff = 0.2, avg. accuracy: 0.30212, avg. recall: 0.96446, avg. number of preds: 7.03
+cutoff = 0.1, avg. accuracy: 0.15247, avg. recall: 0.99028, avg. number of preds: 14.73
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.35597, avg. recall: 0.36734, avg. number of preds: 0.79
+cutoff = 0.4, avg. accuracy: 0.48001, avg. recall: 0.63203, avg. number of preds: 2.18
+cutoff = 0.3, avg. accuracy: 0.37128, avg. recall: 0.80243, avg. number of preds: 4.75
+cutoff = 0.2, avg. accuracy: 0.21368, avg. recall: 0.90247, avg. number of preds: 10.35
+cutoff = 0.1, avg. accuracy: 0.08474, avg. recall: 0.96836, avg. number of preds: 36.26
+--------------------
+std of solvent:  1.2672374248504639
+std of reagent:  1.7434842586517334
+--------------------------------------------------
+
+Learning Rate: [0.005107725865298385]
+--------------- Validate ---------------
+
+epoch: 19
+Overall two tasks of validation avg_BCE_loss: 3.30966
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.51939, avg. recall: 0.53891, avg. number of preds: 1.06
+cutoff = 0.4, avg. accuracy: 0.61051, avg. recall: 0.72317, avg. number of preds: 1.78
+cutoff = 0.3, avg. accuracy: 0.50032, avg. recall: 0.88441, avg. number of preds: 3.51
+cutoff = 0.2, avg. accuracy: 0.31626, avg. recall: 0.96364, avg. number of preds: 6.70
+cutoff = 0.1, avg. accuracy: 0.15596, avg. recall: 0.98928, avg. number of preds: 13.93
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.36019, avg. recall: 0.37232, avg. number of preds: 0.81
+cutoff = 0.4, avg. accuracy: 0.48061, avg. recall: 0.60668, avg. number of preds: 1.98
+cutoff = 0.3, avg. accuracy: 0.38710, avg. recall: 0.78890, avg. number of preds: 4.32
+cutoff = 0.2, avg. accuracy: 0.23144, avg. recall: 0.89477, avg. number of preds: 9.17
+cutoff = 0.1, avg. accuracy: 0.09045, avg. recall: 0.96523, avg. number of preds: 32.00
+--------------------
+std of solvent:  1.261419415473938
+std of reagent:  1.7403419017791748
+--------------------------------------------------
+
+Learning Rate: [0.004868489604814886]
+--------------- Validate ---------------
+
+epoch: 20
+Overall two tasks of validation avg_BCE_loss: 3.28213
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.53181, avg. recall: 0.55602, avg. number of preds: 1.11
+cutoff = 0.4, avg. accuracy: 0.61665, avg. recall: 0.73365, avg. number of preds: 1.81
+cutoff = 0.3, avg. accuracy: 0.50632, avg. recall: 0.88833, avg. number of preds: 3.49
+cutoff = 0.2, avg. accuracy: 0.32789, avg. recall: 0.96145, avg. number of preds: 6.49
+cutoff = 0.1, avg. accuracy: 0.16252, avg. recall: 0.99087, avg. number of preds: 13.75
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.36204, avg. recall: 0.37603, avg. number of preds: 0.82
+cutoff = 0.4, avg. accuracy: 0.48581, avg. recall: 0.62919, avg. number of preds: 2.09
+cutoff = 0.3, avg. accuracy: 0.39361, avg. recall: 0.79229, avg. number of preds: 4.20
+cutoff = 0.2, avg. accuracy: 0.23338, avg. recall: 0.89563, avg. number of preds: 9.15
+cutoff = 0.1, avg. accuracy: 0.09080, avg. recall: 0.96640, avg. number of preds: 31.34
+--------------------
+std of solvent:  1.250540852546692
+std of reagent:  1.734838843345642
+--------------------------------------------------
+
+Learning Rate: [0.0046404587202343835]
+--------------- Validate ---------------
+
+epoch: 21
+Overall two tasks of validation avg_BCE_loss: 3.30343
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.54538, avg. recall: 0.57804, avg. number of preds: 1.21
+cutoff = 0.4, avg. accuracy: 0.60354, avg. recall: 0.73932, avg. number of preds: 1.89
+cutoff = 0.3, avg. accuracy: 0.50348, avg. recall: 0.88182, avg. number of preds: 3.40
+cutoff = 0.2, avg. accuracy: 0.33072, avg. recall: 0.96031, avg. number of preds: 6.43
+cutoff = 0.1, avg. accuracy: 0.17070, avg. recall: 0.98969, avg. number of preds: 13.71
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.36244, avg. recall: 0.37417, avg. number of preds: 0.80
+cutoff = 0.4, avg. accuracy: 0.48637, avg. recall: 0.63000, avg. number of preds: 2.13
+cutoff = 0.3, avg. accuracy: 0.38432, avg. recall: 0.79948, avg. number of preds: 4.46
+cutoff = 0.2, avg. accuracy: 0.22295, avg. recall: 0.89933, avg. number of preds: 9.67
+cutoff = 0.1, avg. accuracy: 0.08756, avg. recall: 0.96759, avg. number of preds: 33.39
+--------------------
+std of solvent:  1.240951657295227
+std of reagent:  1.7289737462997437
+--------------------------------------------------
+
+Learning Rate: [0.004423108372851935]
+--------------- Validate ---------------
+
+epoch: 22
+Overall two tasks of validation avg_BCE_loss: 3.26276
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.54694, avg. recall: 0.57365, avg. number of preds: 1.16
+cutoff = 0.4, avg. accuracy: 0.61208, avg. recall: 0.73706, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.50702, avg. recall: 0.88999, avg. number of preds: 3.44
+cutoff = 0.2, avg. accuracy: 0.33141, avg. recall: 0.96279, avg. number of preds: 6.39
+cutoff = 0.1, avg. accuracy: 0.16476, avg. recall: 0.99148, avg. number of preds: 13.73
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.36319, avg. recall: 0.37554, avg. number of preds: 0.80
+cutoff = 0.4, avg. accuracy: 0.48600, avg. recall: 0.63139, avg. number of preds: 2.09
+cutoff = 0.3, avg. accuracy: 0.38771, avg. recall: 0.79837, avg. number of preds: 4.43
+cutoff = 0.2, avg. accuracy: 0.23589, avg. recall: 0.89825, avg. number of preds: 9.13
+cutoff = 0.1, avg. accuracy: 0.09646, avg. recall: 0.96593, avg. number of preds: 29.28
+--------------------
+std of solvent:  1.2375489473342896
+std of reagent:  1.7242779731750488
+--------------------------------------------------
+
+Learning Rate: [0.004215938306419143]
+--------------- Validate ---------------
+
+epoch: 23
+Overall two tasks of validation avg_BCE_loss: 3.24085
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.55121, avg. recall: 0.57440, avg. number of preds: 1.14
+cutoff = 0.4, avg. accuracy: 0.62131, avg. recall: 0.74695, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.50614, avg. recall: 0.89716, avg. number of preds: 3.50
+cutoff = 0.2, avg. accuracy: 0.32719, avg. recall: 0.96410, avg. number of preds: 6.52
+cutoff = 0.1, avg. accuracy: 0.16787, avg. recall: 0.99064, avg. number of preds: 13.71
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.39329, avg. recall: 0.40808, avg. number of preds: 0.87
+cutoff = 0.4, avg. accuracy: 0.50113, avg. recall: 0.65284, avg. number of preds: 2.18
+cutoff = 0.3, avg. accuracy: 0.38250, avg. recall: 0.81296, avg. number of preds: 4.58
+cutoff = 0.2, avg. accuracy: 0.22419, avg. recall: 0.90498, avg. number of preds: 9.48
+cutoff = 0.1, avg. accuracy: 0.08574, avg. recall: 0.96964, avg. number of preds: 33.40
+--------------------
+std of solvent:  1.2256582975387573
+std of reagent:  1.7170519828796387
+--------------------------------------------------
+
+Learning Rate: [0.0040184716957481865]
+--------------- Validate ---------------
+
+epoch: 24
+Overall two tasks of validation avg_BCE_loss: 3.23065
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.53855, avg. recall: 0.55906, avg. number of preds: 1.09
+cutoff = 0.4, avg. accuracy: 0.62792, avg. recall: 0.74616, avg. number of preds: 1.83
+cutoff = 0.3, avg. accuracy: 0.51537, avg. recall: 0.89396, avg. number of preds: 3.42
+cutoff = 0.2, avg. accuracy: 0.33644, avg. recall: 0.96389, avg. number of preds: 6.42
+cutoff = 0.1, avg. accuracy: 0.16862, avg. recall: 0.99036, avg. number of preds: 13.60
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.38142, avg. recall: 0.39788, avg. number of preds: 0.85
+cutoff = 0.4, avg. accuracy: 0.49520, avg. recall: 0.64184, avg. number of preds: 2.11
+cutoff = 0.3, avg. accuracy: 0.39670, avg. recall: 0.80188, avg. number of preds: 4.28
+cutoff = 0.2, avg. accuracy: 0.23586, avg. recall: 0.90161, avg. number of preds: 8.99
+cutoff = 0.1, avg. accuracy: 0.09368, avg. recall: 0.96650, avg. number of preds: 29.80
+--------------------
+std of solvent:  1.2263097763061523
+std of reagent:  1.7103511095046997
+--------------------------------------------------
+
+Learning Rate: [0.003830254049245065]
+--------------- Validate ---------------
+
+epoch: 25
+Overall two tasks of validation avg_BCE_loss: 3.22253
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.54663, avg. recall: 0.56852, avg. number of preds: 1.12
+cutoff = 0.4, avg. accuracy: 0.62771, avg. recall: 0.74654, avg. number of preds: 1.83
+cutoff = 0.3, avg. accuracy: 0.51783, avg. recall: 0.89307, avg. number of preds: 3.41
+cutoff = 0.2, avg. accuracy: 0.34622, avg. recall: 0.96225, avg. number of preds: 6.20
+cutoff = 0.1, avg. accuracy: 0.17543, avg. recall: 0.99023, avg. number of preds: 13.30
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.37492, avg. recall: 0.38722, avg. number of preds: 0.83
+cutoff = 0.4, avg. accuracy: 0.49792, avg. recall: 0.62790, avg. number of preds: 2.02
+cutoff = 0.3, avg. accuracy: 0.40103, avg. recall: 0.79946, avg. number of preds: 4.25
+cutoff = 0.2, avg. accuracy: 0.24751, avg. recall: 0.89627, avg. number of preds: 8.64
+cutoff = 0.1, avg. accuracy: 0.09961, avg. recall: 0.96515, avg. number of preds: 28.66
+--------------------
+std of solvent:  1.2152591943740845
+std of reagent:  1.702211618423462
+--------------------------------------------------
+
+Learning Rate: [0.0036508521628461285]
+--------------- Validate ---------------
+
+epoch: 26
+Overall two tasks of validation avg_BCE_loss: 3.19083
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.55979, avg. recall: 0.58090, avg. number of preds: 1.14
+cutoff = 0.4, avg. accuracy: 0.63453, avg. recall: 0.75461, avg. number of preds: 1.84
+cutoff = 0.3, avg. accuracy: 0.51827, avg. recall: 0.90178, avg. number of preds: 3.48
+cutoff = 0.2, avg. accuracy: 0.34070, avg. recall: 0.96500, avg. number of preds: 6.31
+cutoff = 0.1, avg. accuracy: 0.17142, avg. recall: 0.99157, avg. number of preds: 13.27
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.39675, avg. recall: 0.40974, avg. number of preds: 0.89
+cutoff = 0.4, avg. accuracy: 0.49745, avg. recall: 0.65124, avg. number of preds: 2.17
+cutoff = 0.3, avg. accuracy: 0.39887, avg. recall: 0.80754, avg. number of preds: 4.31
+cutoff = 0.2, avg. accuracy: 0.24220, avg. recall: 0.90072, avg. number of preds: 8.65
+cutoff = 0.1, avg. accuracy: 0.09604, avg. recall: 0.96652, avg. number of preds: 28.61
+--------------------
+std of solvent:  1.2005254030227661
+std of reagent:  1.6938633918762207
+--------------------------------------------------
+
+Learning Rate: [0.0034798531229502426]
+--------------- Validate ---------------
+
+epoch: 27
+Overall two tasks of validation avg_BCE_loss: 3.18993
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.55879, avg. recall: 0.58279, avg. number of preds: 1.14
+cutoff = 0.4, avg. accuracy: 0.63308, avg. recall: 0.75883, avg. number of preds: 1.87
+cutoff = 0.3, avg. accuracy: 0.52755, avg. recall: 0.89621, avg. number of preds: 3.37
+cutoff = 0.2, avg. accuracy: 0.35351, avg. recall: 0.96264, avg. number of preds: 6.15
+cutoff = 0.1, avg. accuracy: 0.17857, avg. recall: 0.99125, avg. number of preds: 13.37
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.39859, avg. recall: 0.41181, avg. number of preds: 0.88
+cutoff = 0.4, avg. accuracy: 0.50637, avg. recall: 0.65630, avg. number of preds: 2.17
+cutoff = 0.3, avg. accuracy: 0.39888, avg. recall: 0.80999, avg. number of preds: 4.38
+cutoff = 0.2, avg. accuracy: 0.23734, avg. recall: 0.90368, avg. number of preds: 8.94
+cutoff = 0.1, avg. accuracy: 0.09581, avg. recall: 0.96738, avg. number of preds: 29.51
+--------------------
+std of solvent:  1.20110023021698
+std of reagent:  1.6836228370666504
+--------------------------------------------------
+
+Learning Rate: [0.0033168633560517386]
+--------------- Validate ---------------
+
+epoch: 28
+Overall two tasks of validation avg_BCE_loss: 3.16886
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.57911, avg. recall: 0.60522, avg. number of preds: 1.20
+cutoff = 0.4, avg. accuracy: 0.63632, avg. recall: 0.76107, avg. number of preds: 1.87
+cutoff = 0.3, avg. accuracy: 0.52917, avg. recall: 0.89385, avg. number of preds: 3.37
+cutoff = 0.2, avg. accuracy: 0.35999, avg. recall: 0.96316, avg. number of preds: 6.08
+cutoff = 0.1, avg. accuracy: 0.18429, avg. recall: 0.99104, avg. number of preds: 13.05
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.38356, avg. recall: 0.39652, avg. number of preds: 0.83
+cutoff = 0.4, avg. accuracy: 0.51628, avg. recall: 0.64486, avg. number of preds: 2.07
+cutoff = 0.3, avg. accuracy: 0.40970, avg. recall: 0.81037, avg. number of preds: 4.36
+cutoff = 0.2, avg. accuracy: 0.24453, avg. recall: 0.90478, avg. number of preds: 9.14
+cutoff = 0.1, avg. accuracy: 0.09728, avg. recall: 0.96782, avg. number of preds: 30.13
+--------------------
+std of solvent:  1.1872397661209106
+std of reagent:  1.6735849380493164
+--------------------------------------------------
+
+Learning Rate: [0.00316150772288676]
+--------------- Validate ---------------
+
+epoch: 29
+Overall two tasks of validation avg_BCE_loss: 3.15679
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.57279, avg. recall: 0.59734, avg. number of preds: 1.17
+cutoff = 0.4, avg. accuracy: 0.64482, avg. recall: 0.76357, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.53931, avg. recall: 0.89710, avg. number of preds: 3.33
+cutoff = 0.2, avg. accuracy: 0.37223, avg. recall: 0.96112, avg. number of preds: 5.98
+cutoff = 0.1, avg. accuracy: 0.19697, avg. recall: 0.99045, avg. number of preds: 12.91
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.40366, avg. recall: 0.41892, avg. number of preds: 0.90
+cutoff = 0.4, avg. accuracy: 0.51775, avg. recall: 0.65068, avg. number of preds: 2.11
+cutoff = 0.3, avg. accuracy: 0.41544, avg. recall: 0.80989, avg. number of preds: 4.39
+cutoff = 0.2, avg. accuracy: 0.25247, avg. recall: 0.90811, avg. number of preds: 9.36
+cutoff = 0.1, avg. accuracy: 0.09758, avg. recall: 0.96955, avg. number of preds: 32.47
+--------------------
+std of solvent:  1.1803803443908691
+std of reagent:  1.6631381511688232
+--------------------------------------------------
+
+Learning Rate: [0.0030134286550080954]
+--------------- Validate ---------------
+
+epoch: 30
+Overall two tasks of validation avg_BCE_loss: 3.12845
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.57937, avg. recall: 0.60314, avg. number of preds: 1.18
+cutoff = 0.4, avg. accuracy: 0.64604, avg. recall: 0.76321, avg. number of preds: 1.83
+cutoff = 0.3, avg. accuracy: 0.54735, avg. recall: 0.89537, avg. number of preds: 3.25
+cutoff = 0.2, avg. accuracy: 0.37645, avg. recall: 0.96304, avg. number of preds: 5.94
+cutoff = 0.1, avg. accuracy: 0.19572, avg. recall: 0.99054, avg. number of preds: 12.96
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.40944, avg. recall: 0.42424, avg. number of preds: 0.91
+cutoff = 0.4, avg. accuracy: 0.52293, avg. recall: 0.64724, avg. number of preds: 2.05
+cutoff = 0.3, avg. accuracy: 0.42191, avg. recall: 0.81272, avg. number of preds: 4.24
+cutoff = 0.2, avg. accuracy: 0.25043, avg. recall: 0.90891, avg. number of preds: 9.01
+cutoff = 0.1, avg. accuracy: 0.09358, avg. recall: 0.96932, avg. number of preds: 30.28
+--------------------
+std of solvent:  1.1750519275665283
+std of reagent:  1.6530686616897583
+--------------------------------------------------
+
+Learning Rate: [0.0028722853318012137]
+--------------- Validate ---------------
+
+epoch: 31
+Overall two tasks of validation avg_BCE_loss: 3.12210
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.59062, avg. recall: 0.61661, avg. number of preds: 1.21
+cutoff = 0.4, avg. accuracy: 0.64730, avg. recall: 0.76695, avg. number of preds: 1.87
+cutoff = 0.3, avg. accuracy: 0.54846, avg. recall: 0.89231, avg. number of preds: 3.24
+cutoff = 0.2, avg. accuracy: 0.38501, avg. recall: 0.95932, avg. number of preds: 5.76
+cutoff = 0.1, avg. accuracy: 0.20431, avg. recall: 0.98863, avg. number of preds: 12.12
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.41930, avg. recall: 0.43350, avg. number of preds: 0.93
+cutoff = 0.4, avg. accuracy: 0.52409, avg. recall: 0.66691, avg. number of preds: 2.17
+cutoff = 0.3, avg. accuracy: 0.41038, avg. recall: 0.82260, avg. number of preds: 4.51
+cutoff = 0.2, avg. accuracy: 0.24948, avg. recall: 0.90764, avg. number of preds: 8.91
+cutoff = 0.1, avg. accuracy: 0.10246, avg. recall: 0.96671, avg. number of preds: 28.37
+--------------------
+std of solvent:  1.1642026901245117
+std of reagent:  1.640846610069275
+--------------------------------------------------
+
+Learning Rate: [0.0027377528960473253]
+--------------- Validate ---------------
+
+epoch: 32
+Overall two tasks of validation avg_BCE_loss: 3.10338
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.59714, avg. recall: 0.62327, avg. number of preds: 1.21
+cutoff = 0.4, avg. accuracy: 0.65260, avg. recall: 0.77372, avg. number of preds: 1.87
+cutoff = 0.3, avg. accuracy: 0.55049, avg. recall: 0.89667, avg. number of preds: 3.26
+cutoff = 0.2, avg. accuracy: 0.38272, avg. recall: 0.96339, avg. number of preds: 5.89
+cutoff = 0.1, avg. accuracy: 0.20110, avg. recall: 0.98996, avg. number of preds: 12.50
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.43005, avg. recall: 0.44590, avg. number of preds: 0.94
+cutoff = 0.4, avg. accuracy: 0.52823, avg. recall: 0.67241, avg. number of preds: 2.14
+cutoff = 0.3, avg. accuracy: 0.41543, avg. recall: 0.82616, avg. number of preds: 4.39
+cutoff = 0.2, avg. accuracy: 0.24657, avg. recall: 0.91056, avg. number of preds: 9.02
+cutoff = 0.1, avg. accuracy: 0.09813, avg. recall: 0.96921, avg. number of preds: 29.57
+--------------------
+std of solvent:  1.1570086479187012
+std of reagent:  1.6291725635528564
+--------------------------------------------------
+
+Learning Rate: [0.0026095217062279846]
+--------------- Validate ---------------
+
+epoch: 33
+Overall two tasks of validation avg_BCE_loss: 3.08949
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.59857, avg. recall: 0.62177, avg. number of preds: 1.20
+cutoff = 0.4, avg. accuracy: 0.65536, avg. recall: 0.77356, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.55791, avg. recall: 0.89929, avg. number of preds: 3.22
+cutoff = 0.2, avg. accuracy: 0.39434, avg. recall: 0.95981, avg. number of preds: 5.64
+cutoff = 0.1, avg. accuracy: 0.21258, avg. recall: 0.98792, avg. number of preds: 11.91
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.42542, avg. recall: 0.43894, avg. number of preds: 0.93
+cutoff = 0.4, avg. accuracy: 0.52845, avg. recall: 0.65346, avg. number of preds: 2.02
+cutoff = 0.3, avg. accuracy: 0.43604, avg. recall: 0.80991, avg. number of preds: 4.07
+cutoff = 0.2, avg. accuracy: 0.27421, avg. recall: 0.90332, avg. number of preds: 8.34
+cutoff = 0.1, avg. accuracy: 0.11431, avg. recall: 0.96577, avg. number of preds: 26.76
+--------------------
+std of solvent:  1.145951747894287
+std of reagent:  1.617344856262207
+--------------------------------------------------
+
+Learning Rate: [0.0024872966238503433]
+--------------- Validate ---------------
+
+epoch: 34
+Overall two tasks of validation avg_BCE_loss: 3.08430
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.60312, avg. recall: 0.63069, avg. number of preds: 1.24
+cutoff = 0.4, avg. accuracy: 0.65798, avg. recall: 0.77422, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.56824, avg. recall: 0.89013, avg. number of preds: 3.10
+cutoff = 0.2, avg. accuracy: 0.41453, avg. recall: 0.95733, avg. number of preds: 5.40
+cutoff = 0.1, avg. accuracy: 0.22659, avg. recall: 0.98710, avg. number of preds: 11.43
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.42928, avg. recall: 0.44730, avg. number of preds: 0.95
+cutoff = 0.4, avg. accuracy: 0.53356, avg. recall: 0.65609, avg. number of preds: 2.03
+cutoff = 0.3, avg. accuracy: 0.43856, avg. recall: 0.81556, avg. number of preds: 4.12
+cutoff = 0.2, avg. accuracy: 0.27464, avg. recall: 0.90340, avg. number of preds: 8.39
+cutoff = 0.1, avg. accuracy: 0.11162, avg. recall: 0.96507, avg. number of preds: 26.83
+--------------------
+std of solvent:  1.1342995166778564
+std of reagent:  1.606766700744629
+--------------------------------------------------
+
+Learning Rate: [0.002370796334152743]
+--------------- Validate ---------------
+
+epoch: 35
+Overall two tasks of validation avg_BCE_loss: 3.06182
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.60384, avg. recall: 0.62952, avg. number of preds: 1.22
+cutoff = 0.4, avg. accuracy: 0.65919, avg. recall: 0.77824, avg. number of preds: 1.86
+cutoff = 0.3, avg. accuracy: 0.56144, avg. recall: 0.90069, avg. number of preds: 3.21
+cutoff = 0.2, avg. accuracy: 0.40127, avg. recall: 0.96102, avg. number of preds: 5.58
+cutoff = 0.1, avg. accuracy: 0.22085, avg. recall: 0.98860, avg. number of preds: 11.76
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.44440, avg. recall: 0.46087, avg. number of preds: 0.98
+cutoff = 0.4, avg. accuracy: 0.53413, avg. recall: 0.67429, avg. number of preds: 2.13
+cutoff = 0.3, avg. accuracy: 0.42930, avg. recall: 0.81948, avg. number of preds: 4.11
+cutoff = 0.2, avg. accuracy: 0.25975, avg. recall: 0.91113, avg. number of preds: 8.48
+cutoff = 0.1, avg. accuracy: 0.10368, avg. recall: 0.96882, avg. number of preds: 27.48
+--------------------
+std of solvent:  1.1281449794769287
+std of reagent:  1.5941579341888428
+--------------------------------------------------
+
+Learning Rate: [0.0022597526986271785]
+--------------- Validate ---------------
+
+epoch: 36
+Overall two tasks of validation avg_BCE_loss: 3.05080
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.61382, avg. recall: 0.64292, avg. number of preds: 1.26
+cutoff = 0.4, avg. accuracy: 0.66510, avg. recall: 0.77858, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.57925, avg. recall: 0.89330, avg. number of preds: 3.07
+cutoff = 0.2, avg. accuracy: 0.42715, avg. recall: 0.95629, avg. number of preds: 5.31
+cutoff = 0.1, avg. accuracy: 0.24320, avg. recall: 0.98782, avg. number of preds: 11.12
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.45775, avg. recall: 0.47604, avg. number of preds: 1.05
+cutoff = 0.4, avg. accuracy: 0.53844, avg. recall: 0.67006, avg. number of preds: 2.14
+cutoff = 0.3, avg. accuracy: 0.44644, avg. recall: 0.81544, avg. number of preds: 4.15
+cutoff = 0.2, avg. accuracy: 0.28370, avg. recall: 0.90849, avg. number of preds: 8.44
+cutoff = 0.1, avg. accuracy: 0.11644, avg. recall: 0.96684, avg. number of preds: 26.81
+--------------------
+std of solvent:  1.113786220550537
+std of reagent:  1.5825966596603394
+--------------------------------------------------
+
+Learning Rate: [0.0021539101378683936]
+--------------- Validate ---------------
+
+epoch: 37
+Overall two tasks of validation avg_BCE_loss: 3.02946
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.61687, avg. recall: 0.64513, avg. number of preds: 1.26
+cutoff = 0.4, avg. accuracy: 0.66954, avg. recall: 0.78634, avg. number of preds: 1.87
+cutoff = 0.3, avg. accuracy: 0.57766, avg. recall: 0.89572, avg. number of preds: 3.09
+cutoff = 0.2, avg. accuracy: 0.42404, avg. recall: 0.95744, avg. number of preds: 5.32
+cutoff = 0.1, avg. accuracy: 0.24301, avg. recall: 0.98799, avg. number of preds: 10.99
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.45704, avg. recall: 0.47148, avg. number of preds: 1.00
+cutoff = 0.4, avg. accuracy: 0.54394, avg. recall: 0.67765, avg. number of preds: 2.11
+cutoff = 0.3, avg. accuracy: 0.44389, avg. recall: 0.82513, avg. number of preds: 4.13
+cutoff = 0.2, avg. accuracy: 0.28026, avg. recall: 0.90911, avg. number of preds: 8.13
+cutoff = 0.1, avg. accuracy: 0.11687, avg. recall: 0.96691, avg. number of preds: 25.33
+--------------------
+std of solvent:  1.1074918508529663
+std of reagent:  1.5701053142547607
+--------------------------------------------------
+
+Learning Rate: [0.0020530250433291562]
+--------------- Validate ---------------
+
+epoch: 38
+Overall two tasks of validation avg_BCE_loss: 3.01576
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.62237, avg. recall: 0.64929, avg. number of preds: 1.25
+cutoff = 0.4, avg. accuracy: 0.67208, avg. recall: 0.78802, avg. number of preds: 1.86
+cutoff = 0.3, avg. accuracy: 0.58599, avg. recall: 0.89708, avg. number of preds: 3.05
+cutoff = 0.2, avg. accuracy: 0.43155, avg. recall: 0.95662, avg. number of preds: 5.24
+cutoff = 0.1, avg. accuracy: 0.24842, avg. recall: 0.98689, avg. number of preds: 10.96
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.45817, avg. recall: 0.47364, avg. number of preds: 1.01
+cutoff = 0.4, avg. accuracy: 0.54916, avg. recall: 0.68471, avg. number of preds: 2.11
+cutoff = 0.3, avg. accuracy: 0.44688, avg. recall: 0.82157, avg. number of preds: 4.06
+cutoff = 0.2, avg. accuracy: 0.28047, avg. recall: 0.91192, avg. number of preds: 8.25
+cutoff = 0.1, avg. accuracy: 0.11170, avg. recall: 0.96874, avg. number of preds: 26.36
+--------------------
+std of solvent:  1.0953773260116577
+std of reagent:  1.5597831010818481
+--------------------------------------------------
+
+Learning Rate: [0.001956865216627817]
+--------------- Validate ---------------
+
+epoch: 39
+Overall two tasks of validation avg_BCE_loss: 3.01410
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.62835, avg. recall: 0.65630, avg. number of preds: 1.28
+cutoff = 0.4, avg. accuracy: 0.67303, avg. recall: 0.78436, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.59733, avg. recall: 0.89066, avg. number of preds: 2.94
+cutoff = 0.2, avg. accuracy: 0.45574, avg. recall: 0.95294, avg. number of preds: 4.99
+cutoff = 0.1, avg. accuracy: 0.26870, avg. recall: 0.98528, avg. number of preds: 10.46
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.46815, avg. recall: 0.48527, avg. number of preds: 1.03
+cutoff = 0.4, avg. accuracy: 0.55065, avg. recall: 0.68555, avg. number of preds: 2.13
+cutoff = 0.3, avg. accuracy: 0.45116, avg. recall: 0.82220, avg. number of preds: 4.06
+cutoff = 0.2, avg. accuracy: 0.28818, avg. recall: 0.90891, avg. number of preds: 8.01
+cutoff = 0.1, avg. accuracy: 0.12031, avg. recall: 0.96645, avg. number of preds: 24.54
+--------------------
+std of solvent:  1.0843610763549805
+std of reagent:  1.548362135887146
+--------------------------------------------------
+
+Learning Rate: [0.0018652093351176366]
+--------------- Validate ---------------
+
+epoch: 40
+Overall two tasks of validation avg_BCE_loss: 3.00442
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.63140, avg. recall: 0.66039, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.67279, avg. recall: 0.78751, avg. number of preds: 1.86
+cutoff = 0.3, avg. accuracy: 0.59480, avg. recall: 0.89278, avg. number of preds: 2.97
+cutoff = 0.2, avg. accuracy: 0.45371, avg. recall: 0.95294, avg. number of preds: 4.95
+cutoff = 0.1, avg. accuracy: 0.27029, avg. recall: 0.98562, avg. number of preds: 10.15
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.46725, avg. recall: 0.48445, avg. number of preds: 1.04
+cutoff = 0.4, avg. accuracy: 0.55344, avg. recall: 0.68089, avg. number of preds: 2.10
+cutoff = 0.3, avg. accuracy: 0.46002, avg. recall: 0.82206, avg. number of preds: 4.00
+cutoff = 0.2, avg. accuracy: 0.29732, avg. recall: 0.90694, avg. number of preds: 7.74
+cutoff = 0.1, avg. accuracy: 0.12479, avg. recall: 0.96607, avg. number of preds: 23.47
+--------------------
+std of solvent:  1.081619143486023
+std of reagent:  1.5375856161117554
+--------------------------------------------------
+
+Learning Rate: [0.0017778464424878476]
+--------------- Validate ---------------
+
+epoch: 41
+Overall two tasks of validation avg_BCE_loss: 2.99159
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.62892, avg. recall: 0.65699, avg. number of preds: 1.28
+cutoff = 0.4, avg. accuracy: 0.67722, avg. recall: 0.78872, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.60345, avg. recall: 0.89133, avg. number of preds: 2.91
+cutoff = 0.2, avg. accuracy: 0.46331, avg. recall: 0.95256, avg. number of preds: 4.87
+cutoff = 0.1, avg. accuracy: 0.27807, avg. recall: 0.98409, avg. number of preds: 10.09
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.47545, avg. recall: 0.49306, avg. number of preds: 1.05
+cutoff = 0.4, avg. accuracy: 0.55763, avg. recall: 0.68375, avg. number of preds: 2.07
+cutoff = 0.3, avg. accuracy: 0.46821, avg. recall: 0.82328, avg. number of preds: 3.86
+cutoff = 0.2, avg. accuracy: 0.30258, avg. recall: 0.90465, avg. number of preds: 7.62
+cutoff = 0.1, avg. accuracy: 0.12863, avg. recall: 0.96581, avg. number of preds: 23.61
+--------------------
+std of solvent:  1.0709353685379028
+std of reagent:  1.5264434814453125
+--------------------------------------------------
+
+Learning Rate: [0.0016945754632239991]
+--------------- Validate ---------------
+
+epoch: 42
+Overall two tasks of validation avg_BCE_loss: 2.98718
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.63933, avg. recall: 0.66854, avg. number of preds: 1.30
+cutoff = 0.4, avg. accuracy: 0.68221, avg. recall: 0.79157, avg. number of preds: 1.86
+cutoff = 0.3, avg. accuracy: 0.60790, avg. recall: 0.88854, avg. number of preds: 2.89
+cutoff = 0.2, avg. accuracy: 0.47153, avg. recall: 0.95244, avg. number of preds: 4.83
+cutoff = 0.1, avg. accuracy: 0.28548, avg. recall: 0.98393, avg. number of preds: 10.12
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.48056, avg. recall: 0.49831, avg. number of preds: 1.06
+cutoff = 0.4, avg. accuracy: 0.56096, avg. recall: 0.68749, avg. number of preds: 2.08
+cutoff = 0.3, avg. accuracy: 0.46821, avg. recall: 0.82017, avg. number of preds: 3.88
+cutoff = 0.2, avg. accuracy: 0.30299, avg. recall: 0.90789, avg. number of preds: 7.57
+cutoff = 0.1, avg. accuracy: 0.12971, avg. recall: 0.96387, avg. number of preds: 22.74
+--------------------
+std of solvent:  1.0527594089508057
+std of reagent:  1.51419997215271
+--------------------------------------------------
+
+Learning Rate: [0.0016152047398100633]
+--------------- Validate ---------------
+
+epoch: 43
+Overall two tasks of validation avg_BCE_loss: 2.98292
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.64047, avg. recall: 0.66961, avg. number of preds: 1.30
+cutoff = 0.4, avg. accuracy: 0.68218, avg. recall: 0.79081, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.60815, avg. recall: 0.89059, avg. number of preds: 2.89
+cutoff = 0.2, avg. accuracy: 0.47306, avg. recall: 0.95136, avg. number of preds: 4.80
+cutoff = 0.1, avg. accuracy: 0.28889, avg. recall: 0.98384, avg. number of preds: 9.98
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.49544, avg. recall: 0.51686, avg. number of preds: 1.13
+cutoff = 0.4, avg. accuracy: 0.55873, avg. recall: 0.70068, avg. number of preds: 2.19
+cutoff = 0.3, avg. accuracy: 0.46568, avg. recall: 0.82353, avg. number of preds: 3.97
+cutoff = 0.2, avg. accuracy: 0.30856, avg. recall: 0.90850, avg. number of preds: 7.69
+cutoff = 0.1, avg. accuracy: 0.13287, avg. recall: 0.96617, avg. number of preds: 23.81
+--------------------
+std of solvent:  1.0456855297088623
+std of reagent:  1.5023622512817383
+--------------------------------------------------
+
+Learning Rate: [0.0015395515916071282]
+--------------- Validate ---------------
+
+epoch: 44
+Overall two tasks of validation avg_BCE_loss: 2.98003
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.64284, avg. recall: 0.67213, avg. number of preds: 1.31
+cutoff = 0.4, avg. accuracy: 0.68423, avg. recall: 0.79248, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.61588, avg. recall: 0.88944, avg. number of preds: 2.84
+cutoff = 0.2, avg. accuracy: 0.48551, avg. recall: 0.95000, avg. number of preds: 4.66
+cutoff = 0.1, avg. accuracy: 0.30306, avg. recall: 0.98127, avg. number of preds: 9.63
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.48466, avg. recall: 0.50057, avg. number of preds: 1.04
+cutoff = 0.4, avg. accuracy: 0.56721, avg. recall: 0.68682, avg. number of preds: 2.03
+cutoff = 0.3, avg. accuracy: 0.47517, avg. recall: 0.82740, avg. number of preds: 3.93
+cutoff = 0.2, avg. accuracy: 0.31097, avg. recall: 0.91043, avg. number of preds: 7.67
+cutoff = 0.1, avg. accuracy: 0.13022, avg. recall: 0.96604, avg. number of preds: 23.33
+--------------------
+std of solvent:  1.035501480102539
+std of reagent:  1.4913389682769775
+--------------------------------------------------
+
+Learning Rate: [0.0014674418943933776]
+--------------- Validate ---------------
+
+epoch: 45
+Overall two tasks of validation avg_BCE_loss: 2.98485
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.64963, avg. recall: 0.67873, avg. number of preds: 1.32
+cutoff = 0.4, avg. accuracy: 0.68578, avg. recall: 0.79040, avg. number of preds: 1.83
+cutoff = 0.3, avg. accuracy: 0.62121, avg. recall: 0.88354, avg. number of preds: 2.77
+cutoff = 0.2, avg. accuracy: 0.49558, avg. recall: 0.94586, avg. number of preds: 4.53
+cutoff = 0.1, avg. accuracy: 0.31243, avg. recall: 0.98126, avg. number of preds: 9.35
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.49666, avg. recall: 0.51536, avg. number of preds: 1.10
+cutoff = 0.4, avg. accuracy: 0.56418, avg. recall: 0.69691, avg. number of preds: 2.13
+cutoff = 0.3, avg. accuracy: 0.47461, avg. recall: 0.82537, avg. number of preds: 3.90
+cutoff = 0.2, avg. accuracy: 0.31718, avg. recall: 0.90651, avg. number of preds: 7.38
+cutoff = 0.1, avg. accuracy: 0.14110, avg. recall: 0.96405, avg. number of preds: 21.74
+--------------------
+std of solvent:  1.0265272855758667
+std of reagent:  1.4807395935058594
+--------------------------------------------------
+
+Learning Rate: [0.001398709679597628]
+--------------- Validate ---------------
+
+epoch: 46
+Overall two tasks of validation avg_BCE_loss: 2.97310
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.65187, avg. recall: 0.67953, avg. number of preds: 1.31
+cutoff = 0.4, avg. accuracy: 0.68904, avg. recall: 0.79327, avg. number of preds: 1.83
+cutoff = 0.3, avg. accuracy: 0.62691, avg. recall: 0.88775, avg. number of preds: 2.77
+cutoff = 0.2, avg. accuracy: 0.49710, avg. recall: 0.94630, avg. number of preds: 4.53
+cutoff = 0.1, avg. accuracy: 0.31596, avg. recall: 0.98137, avg. number of preds: 9.31
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.50150, avg. recall: 0.52216, avg. number of preds: 1.13
+cutoff = 0.4, avg. accuracy: 0.56796, avg. recall: 0.69423, avg. number of preds: 2.10
+cutoff = 0.3, avg. accuracy: 0.48598, avg. recall: 0.81944, avg. number of preds: 3.74
+cutoff = 0.2, avg. accuracy: 0.32550, avg. recall: 0.90549, avg. number of preds: 7.23
+cutoff = 0.1, avg. accuracy: 0.14149, avg. recall: 0.96443, avg. number of preds: 21.85
+--------------------
+std of solvent:  1.016911268234253
+std of reagent:  1.4717566967010498
+--------------------------------------------------
+
+Learning Rate: [0.0013331967523040132]
+--------------- Validate ---------------
+
+epoch: 47
+Overall two tasks of validation avg_BCE_loss: 2.97755
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.65422, avg. recall: 0.68418, avg. number of preds: 1.33
+cutoff = 0.4, avg. accuracy: 0.68716, avg. recall: 0.79308, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.62513, avg. recall: 0.88615, avg. number of preds: 2.78
+cutoff = 0.2, avg. accuracy: 0.50102, avg. recall: 0.94568, avg. number of preds: 4.52
+cutoff = 0.1, avg. accuracy: 0.32188, avg. recall: 0.98071, avg. number of preds: 9.28
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.49904, avg. recall: 0.51615, avg. number of preds: 1.10
+cutoff = 0.4, avg. accuracy: 0.57200, avg. recall: 0.69083, avg. number of preds: 2.04
+cutoff = 0.3, avg. accuracy: 0.49639, avg. recall: 0.82220, avg. number of preds: 3.68
+cutoff = 0.2, avg. accuracy: 0.33594, avg. recall: 0.90494, avg. number of preds: 7.09
+cutoff = 0.1, avg. accuracy: 0.15016, avg. recall: 0.96352, avg. number of preds: 21.10
+--------------------
+std of solvent:  1.0030642747879028
+std of reagent:  1.4609296321868896
+--------------------------------------------------
+
+Learning Rate: [0.0012707523271486066]
+--------------- Validate ---------------
+
+epoch: 48
+Overall two tasks of validation avg_BCE_loss: 2.97274
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.65760, avg. recall: 0.68812, avg. number of preds: 1.34
+cutoff = 0.4, avg. accuracy: 0.69321, avg. recall: 0.79662, avg. number of preds: 1.83
+cutoff = 0.3, avg. accuracy: 0.63031, avg. recall: 0.88214, avg. number of preds: 2.72
+cutoff = 0.2, avg. accuracy: 0.51179, avg. recall: 0.94277, avg. number of preds: 4.39
+cutoff = 0.1, avg. accuracy: 0.33547, avg. recall: 0.97914, avg. number of preds: 8.86
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.50159, avg. recall: 0.51960, avg. number of preds: 1.09
+cutoff = 0.4, avg. accuracy: 0.57764, avg. recall: 0.69469, avg. number of preds: 2.03
+cutoff = 0.3, avg. accuracy: 0.49485, avg. recall: 0.82609, avg. number of preds: 3.73
+cutoff = 0.2, avg. accuracy: 0.33139, avg. recall: 0.91106, avg. number of preds: 7.25
+cutoff = 0.1, avg. accuracy: 0.14222, avg. recall: 0.96608, avg. number of preds: 21.91
+--------------------
+std of solvent:  0.9979572296142578
+std of reagent:  1.4509342908859253
+--------------------------------------------------
+
+Learning Rate: [0.0012112326812699652]
+--------------- Validate ---------------
+
+epoch: 49
+Overall two tasks of validation avg_BCE_loss: 2.98269
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.65810, avg. recall: 0.68781, avg. number of preds: 1.34
+cutoff = 0.4, avg. accuracy: 0.69315, avg. recall: 0.79908, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.63205, avg. recall: 0.88507, avg. number of preds: 2.73
+cutoff = 0.2, avg. accuracy: 0.51634, avg. recall: 0.94240, avg. number of preds: 4.37
+cutoff = 0.1, avg. accuracy: 0.34364, avg. recall: 0.98016, avg. number of preds: 8.90
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.50411, avg. recall: 0.52142, avg. number of preds: 1.11
+cutoff = 0.4, avg. accuracy: 0.57455, avg. recall: 0.69166, avg. number of preds: 2.06
+cutoff = 0.3, avg. accuracy: 0.49479, avg. recall: 0.82108, avg. number of preds: 3.74
+cutoff = 0.2, avg. accuracy: 0.33752, avg. recall: 0.90511, avg. number of preds: 7.15
+cutoff = 0.1, avg. accuracy: 0.15071, avg. recall: 0.96262, avg. number of preds: 21.20
+--------------------
+std of solvent:  0.9885863065719604
+std of reagent:  1.4418106079101562
+--------------------------------------------------
+
+Learning Rate: [0.0011545008235148112]
+--------------- Validate ---------------
+
+epoch: 50
+Overall two tasks of validation avg_BCE_loss: 2.98413
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.66228, avg. recall: 0.69492, avg. number of preds: 1.36
+cutoff = 0.4, avg. accuracy: 0.69259, avg. recall: 0.79877, avg. number of preds: 1.85
+cutoff = 0.3, avg. accuracy: 0.63563, avg. recall: 0.88469, avg. number of preds: 2.71
+cutoff = 0.2, avg. accuracy: 0.52199, avg. recall: 0.94130, avg. number of preds: 4.29
+cutoff = 0.1, avg. accuracy: 0.34749, avg. recall: 0.97951, avg. number of preds: 8.60
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.51149, avg. recall: 0.52926, avg. number of preds: 1.12
+cutoff = 0.4, avg. accuracy: 0.58162, avg. recall: 0.69226, avg. number of preds: 2.01
+cutoff = 0.3, avg. accuracy: 0.50197, avg. recall: 0.82319, avg. number of preds: 3.66
+cutoff = 0.2, avg. accuracy: 0.34080, avg. recall: 0.90551, avg. number of preds: 7.01
+cutoff = 0.1, avg. accuracy: 0.15119, avg. recall: 0.96376, avg. number of preds: 20.94
+--------------------
+std of solvent:  0.9751610159873962
+std of reagent:  1.4342913627624512
+--------------------------------------------------
+
+Learning Rate: [0.0011004261791375]
+--------------- Validate ---------------
+
+epoch: 51
+Overall two tasks of validation avg_BCE_loss: 2.97681
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.66315, avg. recall: 0.69352, avg. number of preds: 1.34
+cutoff = 0.4, avg. accuracy: 0.69586, avg. recall: 0.79603, avg. number of preds: 1.83
+cutoff = 0.3, avg. accuracy: 0.64139, avg. recall: 0.88269, avg. number of preds: 2.68
+cutoff = 0.2, avg. accuracy: 0.52723, avg. recall: 0.94047, avg. number of preds: 4.29
+cutoff = 0.1, avg. accuracy: 0.35481, avg. recall: 0.97937, avg. number of preds: 8.66
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.51109, avg. recall: 0.52853, avg. number of preds: 1.11
+cutoff = 0.4, avg. accuracy: 0.58112, avg. recall: 0.69171, avg. number of preds: 2.00
+cutoff = 0.3, avg. accuracy: 0.50352, avg. recall: 0.82325, avg. number of preds: 3.64
+cutoff = 0.2, avg. accuracy: 0.34358, avg. recall: 0.90711, avg. number of preds: 7.08
+cutoff = 0.1, avg. accuracy: 0.15325, avg. recall: 0.96420, avg. number of preds: 21.13
+--------------------
+std of solvent:  0.9706125259399414
+std of reagent:  1.4240891933441162
+--------------------------------------------------
+
+Learning Rate: [0.0010488842892675703]
+--------------- Validate ---------------
+
+epoch: 52
+Overall two tasks of validation avg_BCE_loss: 2.97664
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.66711, avg. recall: 0.69633, avg. number of preds: 1.34
+cutoff = 0.4, avg. accuracy: 0.69857, avg. recall: 0.79960, avg. number of preds: 1.83
+cutoff = 0.3, avg. accuracy: 0.64527, avg. recall: 0.88230, avg. number of preds: 2.66
+cutoff = 0.2, avg. accuracy: 0.53450, avg. recall: 0.94008, avg. number of preds: 4.20
+cutoff = 0.1, avg. accuracy: 0.35975, avg. recall: 0.97714, avg. number of preds: 8.51
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.52106, avg. recall: 0.54086, avg. number of preds: 1.16
+cutoff = 0.4, avg. accuracy: 0.58386, avg. recall: 0.69911, avg. number of preds: 2.04
+cutoff = 0.3, avg. accuracy: 0.50912, avg. recall: 0.82219, avg. number of preds: 3.60
+cutoff = 0.2, avg. accuracy: 0.35295, avg. recall: 0.90540, avg. number of preds: 6.90
+cutoff = 0.1, avg. accuracy: 0.16200, avg. recall: 0.96285, avg. number of preds: 20.33
+--------------------
+std of solvent:  0.9584178328514099
+std of reagent:  1.4146808385849
+--------------------------------------------------
+
+Learning Rate: [0.0009997565244536676]
+--------------- Validate ---------------
+
+epoch: 53
+Overall two tasks of validation avg_BCE_loss: 3.00989
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.66742, avg. recall: 0.69792, avg. number of preds: 1.36
+cutoff = 0.4, avg. accuracy: 0.69946, avg. recall: 0.79681, avg. number of preds: 1.82
+cutoff = 0.3, avg. accuracy: 0.64909, avg. recall: 0.87810, avg. number of preds: 2.60
+cutoff = 0.2, avg. accuracy: 0.54268, avg. recall: 0.93522, avg. number of preds: 4.08
+cutoff = 0.1, avg. accuracy: 0.37243, avg. recall: 0.97599, avg. number of preds: 8.23
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.52682, avg. recall: 0.54796, avg. number of preds: 1.17
+cutoff = 0.4, avg. accuracy: 0.58484, avg. recall: 0.70446, avg. number of preds: 2.06
+cutoff = 0.3, avg. accuracy: 0.50263, avg. recall: 0.82624, avg. number of preds: 3.66
+cutoff = 0.2, avg. accuracy: 0.34713, avg. recall: 0.90705, avg. number of preds: 6.91
+cutoff = 0.1, avg. accuracy: 0.15697, avg. recall: 0.96274, avg. number of preds: 20.22
+--------------------
+std of solvent:  0.949195146560669
+std of reagent:  1.4069232940673828
+--------------------------------------------------
+
+Learning Rate: [0.0009529298116245319]
+--------------- Validate ---------------
+
+epoch: 54
+Overall two tasks of validation avg_BCE_loss: 3.01339
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.66980, avg. recall: 0.69997, avg. number of preds: 1.36
+cutoff = 0.4, avg. accuracy: 0.69781, avg. recall: 0.79641, avg. number of preds: 1.82
+cutoff = 0.3, avg. accuracy: 0.65018, avg. recall: 0.87882, avg. number of preds: 2.61
+cutoff = 0.2, avg. accuracy: 0.54382, avg. recall: 0.93581, avg. number of preds: 4.08
+cutoff = 0.1, avg. accuracy: 0.37963, avg. recall: 0.97569, avg. number of preds: 8.08
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.52485, avg. recall: 0.54555, avg. number of preds: 1.16
+cutoff = 0.4, avg. accuracy: 0.58760, avg. recall: 0.70470, avg. number of preds: 2.05
+cutoff = 0.3, avg. accuracy: 0.50738, avg. recall: 0.82529, avg. number of preds: 3.65
+cutoff = 0.2, avg. accuracy: 0.34996, avg. recall: 0.90694, avg. number of preds: 6.96
+cutoff = 0.1, avg. accuracy: 0.15857, avg. recall: 0.96359, avg. number of preds: 20.41
+--------------------
+std of solvent:  0.9407477974891663
+std of reagent:  1.39964759349823
+--------------------------------------------------
+
+Learning Rate: [0.0009082963738386181]
+--------------- Validate ---------------
+
+epoch: 55
+Overall two tasks of validation avg_BCE_loss: 3.03582
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.67255, avg. recall: 0.70435, avg. number of preds: 1.37
+cutoff = 0.4, avg. accuracy: 0.70119, avg. recall: 0.79904, avg. number of preds: 1.82
+cutoff = 0.3, avg. accuracy: 0.65308, avg. recall: 0.87911, avg. number of preds: 2.60
+cutoff = 0.2, avg. accuracy: 0.55081, avg. recall: 0.93493, avg. number of preds: 4.03
+cutoff = 0.1, avg. accuracy: 0.38585, avg. recall: 0.97432, avg. number of preds: 8.05
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.53116, avg. recall: 0.55153, avg. number of preds: 1.19
+cutoff = 0.4, avg. accuracy: 0.58677, avg. recall: 0.70602, avg. number of preds: 2.07
+cutoff = 0.3, avg. accuracy: 0.51148, avg. recall: 0.82083, avg. number of preds: 3.57
+cutoff = 0.2, avg. accuracy: 0.36201, avg. recall: 0.90245, avg. number of preds: 6.69
+cutoff = 0.1, avg. accuracy: 0.17137, avg. recall: 0.96105, avg. number of preds: 19.40
+--------------------
+std of solvent:  0.9319382905960083
+std of reagent:  1.392541527748108
+--------------------------------------------------
+
+Learning Rate: [0.0008657534822233533]
+--------------- Validate ---------------
+
+epoch: 56
+Overall two tasks of validation avg_BCE_loss: 3.04595
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.67500, avg. recall: 0.70630, avg. number of preds: 1.37
+cutoff = 0.4, avg. accuracy: 0.70375, avg. recall: 0.80020, avg. number of preds: 1.81
+cutoff = 0.3, avg. accuracy: 0.65546, avg. recall: 0.87717, avg. number of preds: 2.57
+cutoff = 0.2, avg. accuracy: 0.55831, avg. recall: 0.93497, avg. number of preds: 3.95
+cutoff = 0.1, avg. accuracy: 0.39792, avg. recall: 0.97322, avg. number of preds: 7.74
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.53370, avg. recall: 0.55456, avg. number of preds: 1.19
+cutoff = 0.4, avg. accuracy: 0.58887, avg. recall: 0.70689, avg. number of preds: 2.06
+cutoff = 0.3, avg. accuracy: 0.51455, avg. recall: 0.82291, avg. number of preds: 3.56
+cutoff = 0.2, avg. accuracy: 0.36546, avg. recall: 0.90512, avg. number of preds: 6.62
+cutoff = 0.1, avg. accuracy: 0.17350, avg. recall: 0.96053, avg. number of preds: 18.71
+--------------------
+std of solvent:  0.9190719723701477
+std of reagent:  1.3834234476089478
+--------------------------------------------------
+
+Learning Rate: [0.0008252032195330937]
+--------------- Validate ---------------
+
+epoch: 57
+Overall two tasks of validation avg_BCE_loss: 3.05588
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.67508, avg. recall: 0.70591, avg. number of preds: 1.37
+cutoff = 0.4, avg. accuracy: 0.70546, avg. recall: 0.79934, avg. number of preds: 1.80
+cutoff = 0.3, avg. accuracy: 0.65997, avg. recall: 0.87455, avg. number of preds: 2.52
+cutoff = 0.2, avg. accuracy: 0.56505, avg. recall: 0.93166, avg. number of preds: 3.86
+cutoff = 0.1, avg. accuracy: 0.40547, avg. recall: 0.97255, avg. number of preds: 7.55
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.52851, avg. recall: 0.54796, avg. number of preds: 1.16
+cutoff = 0.4, avg. accuracy: 0.59147, avg. recall: 0.70014, avg. number of preds: 2.02
+cutoff = 0.3, avg. accuracy: 0.51921, avg. recall: 0.82211, avg. number of preds: 3.56
+cutoff = 0.2, avg. accuracy: 0.36863, avg. recall: 0.90411, avg. number of preds: 6.56
+cutoff = 0.1, avg. accuracy: 0.17337, avg. recall: 0.95960, avg. number of preds: 18.64
+--------------------
+std of solvent:  0.9148531556129456
+std of reagent:  1.3760132789611816
+--------------------------------------------------
+
+Learning Rate: [0.0007865522547815802]
+--------------- Validate ---------------
+
+epoch: 58
+Overall two tasks of validation avg_BCE_loss: 3.05879
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.67833, avg. recall: 0.70964, avg. number of preds: 1.38
+cutoff = 0.4, avg. accuracy: 0.70867, avg. recall: 0.80276, avg. number of preds: 1.81
+cutoff = 0.3, avg. accuracy: 0.66230, avg. recall: 0.87811, avg. number of preds: 2.54
+cutoff = 0.2, avg. accuracy: 0.56471, avg. recall: 0.93124, avg. number of preds: 3.89
+cutoff = 0.1, avg. accuracy: 0.40739, avg. recall: 0.97206, avg. number of preds: 7.62
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.53562, avg. recall: 0.55533, avg. number of preds: 1.18
+cutoff = 0.4, avg. accuracy: 0.59306, avg. recall: 0.70822, avg. number of preds: 2.06
+cutoff = 0.3, avg. accuracy: 0.51355, avg. recall: 0.82616, avg. number of preds: 3.64
+cutoff = 0.2, avg. accuracy: 0.36298, avg. recall: 0.90540, avg. number of preds: 6.80
+cutoff = 0.1, avg. accuracy: 0.17331, avg. recall: 0.96211, avg. number of preds: 19.33
+--------------------
+std of solvent:  0.9066839814186096
+std of reagent:  1.3671114444732666
+--------------------------------------------------
+
+Learning Rate: [0.000749711628430186]
+--------------- Validate ---------------
+
+epoch: 59
+Overall two tasks of validation avg_BCE_loss: 3.10578
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.67850, avg. recall: 0.70930, avg. number of preds: 1.37
+cutoff = 0.4, avg. accuracy: 0.70650, avg. recall: 0.79981, avg. number of preds: 1.81
+cutoff = 0.3, avg. accuracy: 0.66440, avg. recall: 0.87362, avg. number of preds: 2.51
+cutoff = 0.2, avg. accuracy: 0.57272, avg. recall: 0.92867, avg. number of preds: 3.83
+cutoff = 0.1, avg. accuracy: 0.41788, avg. recall: 0.97065, avg. number of preds: 7.51
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.53674, avg. recall: 0.55681, avg. number of preds: 1.19
+cutoff = 0.4, avg. accuracy: 0.59363, avg. recall: 0.70365, avg. number of preds: 2.02
+cutoff = 0.3, avg. accuracy: 0.52140, avg. recall: 0.82106, avg. number of preds: 3.51
+cutoff = 0.2, avg. accuracy: 0.37731, avg. recall: 0.90257, avg. number of preds: 6.54
+cutoff = 0.1, avg. accuracy: 0.18251, avg. recall: 0.95978, avg. number of preds: 18.68
+--------------------
+std of solvent:  0.8975080251693726
+std of reagent:  1.3613736629486084
+--------------------------------------------------
+
+Learning Rate: [0.0007145965476375414]
+--------------- Validate ---------------
+
+epoch: 60
+Overall two tasks of validation avg_BCE_loss: 3.12063
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.68116, avg. recall: 0.71353, avg. number of preds: 1.39
+cutoff = 0.4, avg. accuracy: 0.70677, avg. recall: 0.80029, avg. number of preds: 1.81
+cutoff = 0.3, avg. accuracy: 0.66653, avg. recall: 0.87275, avg. number of preds: 2.49
+cutoff = 0.2, avg. accuracy: 0.57631, avg. recall: 0.92937, avg. number of preds: 3.77
+cutoff = 0.1, avg. accuracy: 0.42099, avg. recall: 0.96864, avg. number of preds: 7.40
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.54007, avg. recall: 0.55981, avg. number of preds: 1.19
+cutoff = 0.4, avg. accuracy: 0.59428, avg. recall: 0.70441, avg. number of preds: 2.00
+cutoff = 0.3, avg. accuracy: 0.52879, avg. recall: 0.81911, avg. number of preds: 3.42
+cutoff = 0.2, avg. accuracy: 0.38439, avg. recall: 0.89858, avg. number of preds: 6.33
+cutoff = 0.1, avg. accuracy: 0.18787, avg. recall: 0.95925, avg. number of preds: 17.80
+--------------------
+std of solvent:  0.8907546401023865
+std of reagent:  1.3536715507507324
+--------------------------------------------------
+
+Learning Rate: [0.0006811261910992824]
+--------------- Validate ---------------
+
+epoch: 61
+Overall two tasks of validation avg_BCE_loss: 3.12187
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.68124, avg. recall: 0.71295, avg. number of preds: 1.38
+cutoff = 0.4, avg. accuracy: 0.70858, avg. recall: 0.80241, avg. number of preds: 1.81
+cutoff = 0.3, avg. accuracy: 0.66899, avg. recall: 0.87412, avg. number of preds: 2.49
+cutoff = 0.2, avg. accuracy: 0.57915, avg. recall: 0.92807, avg. number of preds: 3.74
+cutoff = 0.1, avg. accuracy: 0.42648, avg. recall: 0.96917, avg. number of preds: 7.32
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.53768, avg. recall: 0.55786, avg. number of preds: 1.18
+cutoff = 0.4, avg. accuracy: 0.59845, avg. recall: 0.70209, avg. number of preds: 1.98
+cutoff = 0.3, avg. accuracy: 0.53152, avg. recall: 0.82240, avg. number of preds: 3.47
+cutoff = 0.2, avg. accuracy: 0.38346, avg. recall: 0.90278, avg. number of preds: 6.49
+cutoff = 0.1, avg. accuracy: 0.18376, avg. recall: 0.95992, avg. number of preds: 18.66
+--------------------
+std of solvent:  0.885881245136261
+std of reagent:  1.3486900329589844
+--------------------------------------------------
+
+Learning Rate: [0.0006492235230287355]
+--------------- Validate ---------------
+
+epoch: 62
+Overall two tasks of validation avg_BCE_loss: 3.14726
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.68327, avg. recall: 0.71567, avg. number of preds: 1.39
+cutoff = 0.4, avg. accuracy: 0.70847, avg. recall: 0.80145, avg. number of preds: 1.81
+cutoff = 0.3, avg. accuracy: 0.67014, avg. recall: 0.87314, avg. number of preds: 2.47
+cutoff = 0.2, avg. accuracy: 0.58307, avg. recall: 0.92697, avg. number of preds: 3.71
+cutoff = 0.1, avg. accuracy: 0.43192, avg. recall: 0.96744, avg. number of preds: 7.23
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.54423, avg. recall: 0.56528, avg. number of preds: 1.21
+cutoff = 0.4, avg. accuracy: 0.59632, avg. recall: 0.70503, avg. number of preds: 2.01
+cutoff = 0.3, avg. accuracy: 0.52914, avg. recall: 0.82108, avg. number of preds: 3.46
+cutoff = 0.2, avg. accuracy: 0.38642, avg. recall: 0.90245, avg. number of preds: 6.42
+cutoff = 0.1, avg. accuracy: 0.18898, avg. recall: 0.95969, avg. number of preds: 18.25
+--------------------
+std of solvent:  0.8769518733024597
+std of reagent:  1.3406713008880615
+--------------------------------------------------
+
+Learning Rate: [0.0006188151158503983]
+--------------- Validate ---------------
+
+epoch: 63
+Overall two tasks of validation avg_BCE_loss: 3.19282
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.68258, avg. recall: 0.71591, avg. number of preds: 1.40
+cutoff = 0.4, avg. accuracy: 0.70813, avg. recall: 0.80024, avg. number of preds: 1.80
+cutoff = 0.3, avg. accuracy: 0.67082, avg. recall: 0.86974, avg. number of preds: 2.45
+cutoff = 0.2, avg. accuracy: 0.58847, avg. recall: 0.92413, avg. number of preds: 3.64
+cutoff = 0.1, avg. accuracy: 0.44078, avg. recall: 0.96639, avg. number of preds: 7.06
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.54815, avg. recall: 0.57044, avg. number of preds: 1.24
+cutoff = 0.4, avg. accuracy: 0.59678, avg. recall: 0.70903, avg. number of preds: 2.04
+cutoff = 0.3, avg. accuracy: 0.53130, avg. recall: 0.82162, avg. number of preds: 3.44
+cutoff = 0.2, avg. accuracy: 0.39087, avg. recall: 0.89901, avg. number of preds: 6.29
+cutoff = 0.1, avg. accuracy: 0.19493, avg. recall: 0.95766, avg. number of preds: 17.67
+--------------------
+std of solvent:  0.8707046508789062
+std of reagent:  1.3366987705230713
+--------------------------------------------------
+
+Learning Rate: [0.0005898309811981239]
+--------------- Validate ---------------
+
+epoch: 64
+Overall two tasks of validation avg_BCE_loss: 3.21979
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.68599, avg. recall: 0.71882, avg. number of preds: 1.40
+cutoff = 0.4, avg. accuracy: 0.71122, avg. recall: 0.80113, avg. number of preds: 1.79
+cutoff = 0.3, avg. accuracy: 0.67501, avg. recall: 0.86922, avg. number of preds: 2.42
+cutoff = 0.2, avg. accuracy: 0.59270, avg. recall: 0.92214, avg. number of preds: 3.59
+cutoff = 0.1, avg. accuracy: 0.44794, avg. recall: 0.96571, avg. number of preds: 6.88
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.54250, avg. recall: 0.56190, avg. number of preds: 1.19
+cutoff = 0.4, avg. accuracy: 0.60178, avg. recall: 0.70027, avg. number of preds: 1.94
+cutoff = 0.3, avg. accuracy: 0.53838, avg. recall: 0.81607, avg. number of preds: 3.32
+cutoff = 0.2, avg. accuracy: 0.39566, avg. recall: 0.89796, avg. number of preds: 6.18
+cutoff = 0.1, avg. accuracy: 0.19584, avg. recall: 0.95731, avg. number of preds: 17.48
+--------------------
+std of solvent:  0.8607453107833862
+std of reagent:  1.3292044401168823
+--------------------------------------------------
+
+Learning Rate: [0.0005622044088290312]
+--------------- Validate ---------------
+
+epoch: 65
+Overall two tasks of validation avg_BCE_loss: 3.22059
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.68448, avg. recall: 0.71796, avg. number of preds: 1.40
+cutoff = 0.4, avg. accuracy: 0.71089, avg. recall: 0.79976, avg. number of preds: 1.79
+cutoff = 0.3, avg. accuracy: 0.67603, avg. recall: 0.86945, avg. number of preds: 2.41
+cutoff = 0.2, avg. accuracy: 0.59536, avg. recall: 0.92216, avg. number of preds: 3.56
+cutoff = 0.1, avg. accuracy: 0.45068, avg. recall: 0.96550, avg. number of preds: 6.78
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.54894, avg. recall: 0.57115, avg. number of preds: 1.23
+cutoff = 0.4, avg. accuracy: 0.59963, avg. recall: 0.70818, avg. number of preds: 2.02
+cutoff = 0.3, avg. accuracy: 0.53264, avg. recall: 0.81864, avg. number of preds: 3.41
+cutoff = 0.2, avg. accuracy: 0.39450, avg. recall: 0.89978, avg. number of preds: 6.24
+cutoff = 0.1, avg. accuracy: 0.19760, avg. recall: 0.95765, avg. number of preds: 17.49
+--------------------
+std of solvent:  0.8571748733520508
+std of reagent:  1.3244638442993164
+--------------------------------------------------
+
+Learning Rate: [0.0005358718130823845]
+--------------- Validate ---------------
+
+epoch: 66
+Overall two tasks of validation avg_BCE_loss: 3.25324
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.68656, avg. recall: 0.71928, avg. number of preds: 1.40
+cutoff = 0.4, avg. accuracy: 0.71056, avg. recall: 0.79944, avg. number of preds: 1.79
+cutoff = 0.3, avg. accuracy: 0.67738, avg. recall: 0.86849, avg. number of preds: 2.41
+cutoff = 0.2, avg. accuracy: 0.59748, avg. recall: 0.92081, avg. number of preds: 3.55
+cutoff = 0.1, avg. accuracy: 0.45410, avg. recall: 0.96472, avg. number of preds: 6.82
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.54985, avg. recall: 0.57116, avg. number of preds: 1.23
+cutoff = 0.4, avg. accuracy: 0.60062, avg. recall: 0.70606, avg. number of preds: 1.99
+cutoff = 0.3, avg. accuracy: 0.54001, avg. recall: 0.81617, avg. number of preds: 3.31
+cutoff = 0.2, avg. accuracy: 0.40110, avg. recall: 0.89640, avg. number of preds: 6.08
+cutoff = 0.1, avg. accuracy: 0.20355, avg. recall: 0.95689, avg. number of preds: 17.08
+--------------------
+std of solvent:  0.8499347567558289
+std of reagent:  1.3172850608825684
+--------------------------------------------------
+
+Learning Rate: [0.0005107725865300501]
+--------------- Validate ---------------
+
+epoch: 67
+Overall two tasks of validation avg_BCE_loss: 3.26511
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.68772, avg. recall: 0.72144, avg. number of preds: 1.40
+cutoff = 0.4, avg. accuracy: 0.71160, avg. recall: 0.80153, avg. number of preds: 1.79
+cutoff = 0.3, avg. accuracy: 0.67837, avg. recall: 0.86826, avg. number of preds: 2.41
+cutoff = 0.2, avg. accuracy: 0.59656, avg. recall: 0.92001, avg. number of preds: 3.55
+cutoff = 0.1, avg. accuracy: 0.45555, avg. recall: 0.96461, avg. number of preds: 6.81
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.54830, avg. recall: 0.56839, avg. number of preds: 1.22
+cutoff = 0.4, avg. accuracy: 0.60186, avg. recall: 0.70398, avg. number of preds: 1.98
+cutoff = 0.3, avg. accuracy: 0.54238, avg. recall: 0.81483, avg. number of preds: 3.31
+cutoff = 0.2, avg. accuracy: 0.40586, avg. recall: 0.89361, avg. number of preds: 6.02
+cutoff = 0.1, avg. accuracy: 0.20592, avg. recall: 0.95556, avg. number of preds: 16.91
+--------------------
+std of solvent:  0.8445619344711304
+std of reagent:  1.3144491910934448
+--------------------------------------------------
+
+Learning Rate: [0.00048684896048169023]
+--------------- Validate ---------------
+
+epoch: 68
+Overall two tasks of validation avg_BCE_loss: 3.31422
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.68811, avg. recall: 0.72174, avg. number of preds: 1.41
+cutoff = 0.4, avg. accuracy: 0.71299, avg. recall: 0.80003, avg. number of preds: 1.79
+cutoff = 0.3, avg. accuracy: 0.68005, avg. recall: 0.86531, avg. number of preds: 2.37
+cutoff = 0.2, avg. accuracy: 0.60447, avg. recall: 0.91676, avg. number of preds: 3.47
+cutoff = 0.1, avg. accuracy: 0.46591, avg. recall: 0.96185, avg. number of preds: 6.58
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.54848, avg. recall: 0.56823, avg. number of preds: 1.21
+cutoff = 0.4, avg. accuracy: 0.60248, avg. recall: 0.70363, avg. number of preds: 1.98
+cutoff = 0.3, avg. accuracy: 0.54633, avg. recall: 0.81737, avg. number of preds: 3.32
+cutoff = 0.2, avg. accuracy: 0.40844, avg. recall: 0.89406, avg. number of preds: 6.01
+cutoff = 0.1, avg. accuracy: 0.21068, avg. recall: 0.95513, avg. number of preds: 16.60
+--------------------
+std of solvent:  0.8384711146354675
+std of reagent:  1.3079956769943237
+--------------------------------------------------
+
+Learning Rate: [0.0004640458720236305]
+--------------- Validate ---------------
+
+epoch: 69
+Overall two tasks of validation avg_BCE_loss: 3.33645
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69049, avg. recall: 0.72374, avg. number of preds: 1.41
+cutoff = 0.4, avg. accuracy: 0.71292, avg. recall: 0.79991, avg. number of preds: 1.79
+cutoff = 0.3, avg. accuracy: 0.68134, avg. recall: 0.86514, avg. number of preds: 2.37
+cutoff = 0.2, avg. accuracy: 0.60586, avg. recall: 0.91771, avg. number of preds: 3.46
+cutoff = 0.1, avg. accuracy: 0.46973, avg. recall: 0.96222, avg. number of preds: 6.58
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.55235, avg. recall: 0.57360, avg. number of preds: 1.23
+cutoff = 0.4, avg. accuracy: 0.60530, avg. recall: 0.70778, avg. number of preds: 1.99
+cutoff = 0.3, avg. accuracy: 0.54593, avg. recall: 0.81599, avg. number of preds: 3.29
+cutoff = 0.2, avg. accuracy: 0.40749, avg. recall: 0.89558, avg. number of preds: 6.02
+cutoff = 0.1, avg. accuracy: 0.20964, avg. recall: 0.95546, avg. number of preds: 16.96
+--------------------
+std of solvent:  0.8347086310386658
+std of reagent:  1.3048807382583618
+--------------------------------------------------
+
+Learning Rate: [0.0004423108372853767]
+--------------- Validate ---------------
+
+epoch: 70
+Overall two tasks of validation avg_BCE_loss: 3.36361
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.68981, avg. recall: 0.72165, avg. number of preds: 1.40
+cutoff = 0.4, avg. accuracy: 0.71422, avg. recall: 0.79988, avg. number of preds: 1.77
+cutoff = 0.3, avg. accuracy: 0.68409, avg. recall: 0.86252, avg. number of preds: 2.34
+cutoff = 0.2, avg. accuracy: 0.61117, avg. recall: 0.91519, avg. number of preds: 3.40
+cutoff = 0.1, avg. accuracy: 0.47525, avg. recall: 0.95996, avg. number of preds: 6.43
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.55517, avg. recall: 0.57659, avg. number of preds: 1.24
+cutoff = 0.4, avg. accuracy: 0.60618, avg. recall: 0.70746, avg. number of preds: 1.97
+cutoff = 0.3, avg. accuracy: 0.55032, avg. recall: 0.81619, avg. number of preds: 3.26
+cutoff = 0.2, avg. accuracy: 0.41258, avg. recall: 0.89437, avg. number of preds: 5.91
+cutoff = 0.1, avg. accuracy: 0.21298, avg. recall: 0.95591, avg. number of preds: 16.60
+--------------------
+std of solvent:  0.8281233310699463
+std of reagent:  1.2979501485824585
+--------------------------------------------------
+
+Learning Rate: [0.00042159383064208897]
+--------------- Validate ---------------
+
+epoch: 71
+Overall two tasks of validation avg_BCE_loss: 3.40676
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69050, avg. recall: 0.72307, avg. number of preds: 1.40
+cutoff = 0.4, avg. accuracy: 0.71340, avg. recall: 0.79741, avg. number of preds: 1.77
+cutoff = 0.3, avg. accuracy: 0.68533, avg. recall: 0.86134, avg. number of preds: 2.33
+cutoff = 0.2, avg. accuracy: 0.61347, avg. recall: 0.91403, avg. number of preds: 3.38
+cutoff = 0.1, avg. accuracy: 0.47950, avg. recall: 0.95873, avg. number of preds: 6.36
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.55647, avg. recall: 0.57775, avg. number of preds: 1.25
+cutoff = 0.4, avg. accuracy: 0.60402, avg. recall: 0.70791, avg. number of preds: 2.00
+cutoff = 0.3, avg. accuracy: 0.54996, avg. recall: 0.81639, avg. number of preds: 3.29
+cutoff = 0.2, avg. accuracy: 0.41146, avg. recall: 0.89459, avg. number of preds: 5.97
+cutoff = 0.1, avg. accuracy: 0.21504, avg. recall: 0.95474, avg. number of preds: 16.65
+--------------------
+std of solvent:  0.823494553565979
+std of reagent:  1.2939841747283936
+--------------------------------------------------
+
+Learning Rate: [0.00040184716957498507]
+--------------- Validate ---------------
+
+epoch: 72
+Overall two tasks of validation avg_BCE_loss: 3.44090
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.68999, avg. recall: 0.72195, avg. number of preds: 1.40
+cutoff = 0.4, avg. accuracy: 0.71236, avg. recall: 0.79569, avg. number of preds: 1.76
+cutoff = 0.3, avg. accuracy: 0.68706, avg. recall: 0.86028, avg. number of preds: 2.32
+cutoff = 0.2, avg. accuracy: 0.61517, avg. recall: 0.91266, avg. number of preds: 3.37
+cutoff = 0.1, avg. accuracy: 0.48069, avg. recall: 0.95810, avg. number of preds: 6.37
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.55848, avg. recall: 0.58065, avg. number of preds: 1.26
+cutoff = 0.4, avg. accuracy: 0.60526, avg. recall: 0.70995, avg. number of preds: 2.00
+cutoff = 0.3, avg. accuracy: 0.54790, avg. recall: 0.81508, avg. number of preds: 3.28
+cutoff = 0.2, avg. accuracy: 0.41492, avg. recall: 0.89386, avg. number of preds: 5.91
+cutoff = 0.1, avg. accuracy: 0.21571, avg. recall: 0.95492, avg. number of preds: 16.59
+--------------------
+std of solvent:  0.816011369228363
+std of reagent:  1.2898229360580444
+--------------------------------------------------
+
+Learning Rate: [0.0003830254049246651]
+--------------- Validate ---------------
+
+epoch: 73
+Overall two tasks of validation avg_BCE_loss: 3.45673
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69076, avg. recall: 0.72354, avg. number of preds: 1.41
+cutoff = 0.4, avg. accuracy: 0.71326, avg. recall: 0.79607, avg. number of preds: 1.76
+cutoff = 0.3, avg. accuracy: 0.68518, avg. recall: 0.85945, avg. number of preds: 2.32
+cutoff = 0.2, avg. accuracy: 0.61418, avg. recall: 0.91272, avg. number of preds: 3.36
+cutoff = 0.1, avg. accuracy: 0.48391, avg. recall: 0.95826, avg. number of preds: 6.29
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.55578, avg. recall: 0.57682, avg. number of preds: 1.24
+cutoff = 0.4, avg. accuracy: 0.60624, avg. recall: 0.70707, avg. number of preds: 1.98
+cutoff = 0.3, avg. accuracy: 0.55141, avg. recall: 0.81593, avg. number of preds: 3.26
+cutoff = 0.2, avg. accuracy: 0.41761, avg. recall: 0.89396, avg. number of preds: 5.89
+cutoff = 0.1, avg. accuracy: 0.21912, avg. recall: 0.95419, avg. number of preds: 16.30
+--------------------
+std of solvent:  0.8110688328742981
+std of reagent:  1.2848094701766968
+--------------------------------------------------
+
+Learning Rate: [0.000365085216284764]
+--------------- Validate ---------------
+
+epoch: 74
+Overall two tasks of validation avg_BCE_loss: 3.48611
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69167, avg. recall: 0.72383, avg. number of preds: 1.41
+cutoff = 0.4, avg. accuracy: 0.71377, avg. recall: 0.79655, avg. number of preds: 1.77
+cutoff = 0.3, avg. accuracy: 0.68803, avg. recall: 0.85944, avg. number of preds: 2.32
+cutoff = 0.2, avg. accuracy: 0.61823, avg. recall: 0.91132, avg. number of preds: 3.33
+cutoff = 0.1, avg. accuracy: 0.48951, avg. recall: 0.95725, avg. number of preds: 6.26
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.55970, avg. recall: 0.58222, avg. number of preds: 1.26
+cutoff = 0.4, avg. accuracy: 0.60914, avg. recall: 0.71062, avg. number of preds: 1.99
+cutoff = 0.3, avg. accuracy: 0.55286, avg. recall: 0.81420, avg. number of preds: 3.26
+cutoff = 0.2, avg. accuracy: 0.42137, avg. recall: 0.89261, avg. number of preds: 5.85
+cutoff = 0.1, avg. accuracy: 0.22385, avg. recall: 0.95419, avg. number of preds: 16.13
+--------------------
+std of solvent:  0.8087924718856812
+std of reagent:  1.2830442190170288
+--------------------------------------------------
+
+Learning Rate: [0.0003479853122951684]
+--------------- Validate ---------------
+
+epoch: 75
+Overall two tasks of validation avg_BCE_loss: 3.50104
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69222, avg. recall: 0.72508, avg. number of preds: 1.41
+cutoff = 0.4, avg. accuracy: 0.71450, avg. recall: 0.79795, avg. number of preds: 1.78
+cutoff = 0.3, avg. accuracy: 0.68878, avg. recall: 0.86095, avg. number of preds: 2.32
+cutoff = 0.2, avg. accuracy: 0.61874, avg. recall: 0.91266, avg. number of preds: 3.33
+cutoff = 0.1, avg. accuracy: 0.48978, avg. recall: 0.95580, avg. number of preds: 6.23
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.55996, avg. recall: 0.58216, avg. number of preds: 1.27
+cutoff = 0.4, avg. accuracy: 0.60827, avg. recall: 0.71035, avg. number of preds: 1.99
+cutoff = 0.3, avg. accuracy: 0.55299, avg. recall: 0.81372, avg. number of preds: 3.26
+cutoff = 0.2, avg. accuracy: 0.42280, avg. recall: 0.89144, avg. number of preds: 5.86
+cutoff = 0.1, avg. accuracy: 0.22517, avg. recall: 0.95372, avg. number of preds: 16.10
+--------------------
+std of solvent:  0.8026520609855652
+std of reagent:  1.2795454263687134
+--------------------------------------------------
+
+Learning Rate: [0.00033168633560531126]
+--------------- Validate ---------------
+
+epoch: 76
+Overall two tasks of validation avg_BCE_loss: 3.54465
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69166, avg. recall: 0.72389, avg. number of preds: 1.41
+cutoff = 0.4, avg. accuracy: 0.71492, avg. recall: 0.79560, avg. number of preds: 1.76
+cutoff = 0.3, avg. accuracy: 0.68946, avg. recall: 0.85803, avg. number of preds: 2.30
+cutoff = 0.2, avg. accuracy: 0.62205, avg. recall: 0.91093, avg. number of preds: 3.30
+cutoff = 0.1, avg. accuracy: 0.49593, avg. recall: 0.95525, avg. number of preds: 6.14
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56155, avg. recall: 0.58360, avg. number of preds: 1.26
+cutoff = 0.4, avg. accuracy: 0.60883, avg. recall: 0.70718, avg. number of preds: 1.96
+cutoff = 0.3, avg. accuracy: 0.55565, avg. recall: 0.81165, avg. number of preds: 3.19
+cutoff = 0.2, avg. accuracy: 0.42586, avg. recall: 0.89078, avg. number of preds: 5.76
+cutoff = 0.1, avg. accuracy: 0.22797, avg. recall: 0.95351, avg. number of preds: 16.05
+--------------------
+std of solvent:  0.7974831461906433
+std of reagent:  1.2756867408752441
+--------------------------------------------------
+
+Learning Rate: [0.000316150772288807]
+--------------- Validate ---------------
+
+epoch: 77
+Overall two tasks of validation avg_BCE_loss: 3.56008
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69259, avg. recall: 0.72588, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71602, avg. recall: 0.79905, avg. number of preds: 1.77
+cutoff = 0.3, avg. accuracy: 0.68869, avg. recall: 0.85944, avg. number of preds: 2.31
+cutoff = 0.2, avg. accuracy: 0.62025, avg. recall: 0.91165, avg. number of preds: 3.32
+cutoff = 0.1, avg. accuracy: 0.49570, avg. recall: 0.95525, avg. number of preds: 6.14
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56027, avg. recall: 0.58128, avg. number of preds: 1.25
+cutoff = 0.4, avg. accuracy: 0.60856, avg. recall: 0.70516, avg. number of preds: 1.95
+cutoff = 0.3, avg. accuracy: 0.55771, avg. recall: 0.81089, avg. number of preds: 3.18
+cutoff = 0.2, avg. accuracy: 0.42718, avg. recall: 0.89059, avg. number of preds: 5.72
+cutoff = 0.1, avg. accuracy: 0.22836, avg. recall: 0.95314, avg. number of preds: 15.84
+--------------------
+std of solvent:  0.7945905327796936
+std of reagent:  1.2725633382797241
+--------------------------------------------------
+
+Learning Rate: [0.00030134286550093434]
+--------------- Validate ---------------
+
+epoch: 78
+Overall two tasks of validation avg_BCE_loss: 3.58857
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69245, avg. recall: 0.72473, avg. number of preds: 1.41
+cutoff = 0.4, avg. accuracy: 0.71560, avg. recall: 0.79652, avg. number of preds: 1.76
+cutoff = 0.3, avg. accuracy: 0.69005, avg. recall: 0.85827, avg. number of preds: 2.30
+cutoff = 0.2, avg. accuracy: 0.62292, avg. recall: 0.91114, avg. number of preds: 3.30
+cutoff = 0.1, avg. accuracy: 0.49938, avg. recall: 0.95457, avg. number of preds: 6.11
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56179, avg. recall: 0.58366, avg. number of preds: 1.26
+cutoff = 0.4, avg. accuracy: 0.60883, avg. recall: 0.70808, avg. number of preds: 1.97
+cutoff = 0.3, avg. accuracy: 0.55689, avg. recall: 0.81365, avg. number of preds: 3.22
+cutoff = 0.2, avg. accuracy: 0.42623, avg. recall: 0.89242, avg. number of preds: 5.83
+cutoff = 0.1, avg. accuracy: 0.22637, avg. recall: 0.95377, avg. number of preds: 16.14
+--------------------
+std of solvent:  0.790215015411377
+std of reagent:  1.2674840688705444
+--------------------------------------------------
+
+Learning Rate: [0.00028722853318024035]
+--------------- Validate ---------------
+
+epoch: 79
+Overall two tasks of validation avg_BCE_loss: 3.62248
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69315, avg. recall: 0.72612, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71660, avg. recall: 0.79646, avg. number of preds: 1.75
+cutoff = 0.3, avg. accuracy: 0.69199, avg. recall: 0.85753, avg. number of preds: 2.28
+cutoff = 0.2, avg. accuracy: 0.62728, avg. recall: 0.90951, avg. number of preds: 3.23
+cutoff = 0.1, avg. accuracy: 0.50439, avg. recall: 0.95238, avg. number of preds: 5.92
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56478, avg. recall: 0.58822, avg. number of preds: 1.27
+cutoff = 0.4, avg. accuracy: 0.60913, avg. recall: 0.70915, avg. number of preds: 1.96
+cutoff = 0.3, avg. accuracy: 0.55929, avg. recall: 0.81270, avg. number of preds: 3.16
+cutoff = 0.2, avg. accuracy: 0.43011, avg. recall: 0.89168, avg. number of preds: 5.66
+cutoff = 0.1, avg. accuracy: 0.22790, avg. recall: 0.95387, avg. number of preds: 15.79
+--------------------
+std of solvent:  0.7863410711288452
+std of reagent:  1.2645092010498047
+--------------------------------------------------
+
+Learning Rate: [0.0002737752896048459]
+--------------- Validate ---------------
+
+epoch: 80
+Overall two tasks of validation avg_BCE_loss: 3.65893
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69479, avg. recall: 0.72812, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71646, avg. recall: 0.79593, avg. number of preds: 1.75
+cutoff = 0.3, avg. accuracy: 0.69303, avg. recall: 0.85588, avg. number of preds: 2.27
+cutoff = 0.2, avg. accuracy: 0.62976, avg. recall: 0.90857, avg. number of preds: 3.21
+cutoff = 0.1, avg. accuracy: 0.50801, avg. recall: 0.95165, avg. number of preds: 5.87
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56395, avg. recall: 0.58664, avg. number of preds: 1.27
+cutoff = 0.4, avg. accuracy: 0.61011, avg. recall: 0.70788, avg. number of preds: 1.96
+cutoff = 0.3, avg. accuracy: 0.56006, avg. recall: 0.81192, avg. number of preds: 3.16
+cutoff = 0.2, avg. accuracy: 0.43301, avg. recall: 0.89074, avg. number of preds: 5.64
+cutoff = 0.1, avg. accuracy: 0.23326, avg. recall: 0.95323, avg. number of preds: 15.55
+--------------------
+std of solvent:  0.7820414304733276
+std of reagent:  1.2618765830993652
+--------------------------------------------------
+
+Learning Rate: [0.00026095217062290654]
+--------------- Validate ---------------
+
+epoch: 81
+Overall two tasks of validation avg_BCE_loss: 3.68062
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69489, avg. recall: 0.72698, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71642, avg. recall: 0.79505, avg. number of preds: 1.75
+cutoff = 0.3, avg. accuracy: 0.69569, avg. recall: 0.85547, avg. number of preds: 2.26
+cutoff = 0.2, avg. accuracy: 0.63205, avg. recall: 0.90720, avg. number of preds: 3.20
+cutoff = 0.1, avg. accuracy: 0.51186, avg. recall: 0.95229, avg. number of preds: 5.86
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56259, avg. recall: 0.58551, avg. number of preds: 1.27
+cutoff = 0.4, avg. accuracy: 0.60952, avg. recall: 0.70667, avg. number of preds: 1.96
+cutoff = 0.3, avg. accuracy: 0.56094, avg. recall: 0.81296, avg. number of preds: 3.18
+cutoff = 0.2, avg. accuracy: 0.43182, avg. recall: 0.89159, avg. number of preds: 5.73
+cutoff = 0.1, avg. accuracy: 0.23181, avg. recall: 0.95303, avg. number of preds: 15.81
+--------------------
+std of solvent:  0.7789587378501892
+std of reagent:  1.258120059967041
+--------------------------------------------------
+
+Learning Rate: [0.00024872966238513735]
+--------------- Validate ---------------
+
+epoch: 82
+Overall two tasks of validation avg_BCE_loss: 3.71782
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69559, avg. recall: 0.72886, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71744, avg. recall: 0.79637, avg. number of preds: 1.75
+cutoff = 0.3, avg. accuracy: 0.69373, avg. recall: 0.85426, avg. number of preds: 2.26
+cutoff = 0.2, avg. accuracy: 0.63197, avg. recall: 0.90636, avg. number of preds: 3.18
+cutoff = 0.1, avg. accuracy: 0.51372, avg. recall: 0.95108, avg. number of preds: 5.78
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56399, avg. recall: 0.58550, avg. number of preds: 1.26
+cutoff = 0.4, avg. accuracy: 0.61059, avg. recall: 0.70647, avg. number of preds: 1.96
+cutoff = 0.3, avg. accuracy: 0.56114, avg. recall: 0.81152, avg. number of preds: 3.16
+cutoff = 0.2, avg. accuracy: 0.43476, avg. recall: 0.88987, avg. number of preds: 5.63
+cutoff = 0.1, avg. accuracy: 0.23564, avg. recall: 0.95171, avg. number of preds: 15.44
+--------------------
+std of solvent:  0.7753733396530151
+std of reagent:  1.2563307285308838
+--------------------------------------------------
+
+Learning Rate: [0.00023707963341537246]
+--------------- Validate ---------------
+
+epoch: 83
+Overall two tasks of validation avg_BCE_loss: 3.76219
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69524, avg. recall: 0.72839, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71589, avg. recall: 0.79508, avg. number of preds: 1.75
+cutoff = 0.3, avg. accuracy: 0.69479, avg. recall: 0.85403, avg. number of preds: 2.25
+cutoff = 0.2, avg. accuracy: 0.63437, avg. recall: 0.90568, avg. number of preds: 3.17
+cutoff = 0.1, avg. accuracy: 0.51563, avg. recall: 0.95012, avg. number of preds: 5.80
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56606, avg. recall: 0.58962, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.61137, avg. recall: 0.70886, avg. number of preds: 1.97
+cutoff = 0.3, avg. accuracy: 0.56173, avg. recall: 0.81014, avg. number of preds: 3.16
+cutoff = 0.2, avg. accuracy: 0.43724, avg. recall: 0.88820, avg. number of preds: 5.60
+cutoff = 0.1, avg. accuracy: 0.23964, avg. recall: 0.95146, avg. number of preds: 15.38
+--------------------
+std of solvent:  0.7718856334686279
+std of reagent:  1.2523232698440552
+--------------------------------------------------
+
+Learning Rate: [0.00022597526986281144]
+--------------- Validate ---------------
+
+epoch: 84
+Overall two tasks of validation avg_BCE_loss: 3.77381
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69561, avg. recall: 0.72876, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71665, avg. recall: 0.79613, avg. number of preds: 1.75
+cutoff = 0.3, avg. accuracy: 0.69546, avg. recall: 0.85310, avg. number of preds: 2.25
+cutoff = 0.2, avg. accuracy: 0.63386, avg. recall: 0.90558, avg. number of preds: 3.17
+cutoff = 0.1, avg. accuracy: 0.51627, avg. recall: 0.94965, avg. number of preds: 5.78
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56663, avg. recall: 0.58943, avg. number of preds: 1.28
+cutoff = 0.4, avg. accuracy: 0.61253, avg. recall: 0.70980, avg. number of preds: 1.98
+cutoff = 0.3, avg. accuracy: 0.56122, avg. recall: 0.81188, avg. number of preds: 3.18
+cutoff = 0.2, avg. accuracy: 0.43554, avg. recall: 0.88972, avg. number of preds: 5.65
+cutoff = 0.1, avg. accuracy: 0.23776, avg. recall: 0.95226, avg. number of preds: 15.54
+--------------------
+std of solvent:  0.7688245177268982
+std of reagent:  1.2498151063919067
+--------------------------------------------------
+
+Learning Rate: [0.00021539101378692852]
+--------------- Validate ---------------
+
+epoch: 85
+Overall two tasks of validation avg_BCE_loss: 3.81377
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69355, avg. recall: 0.72643, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71675, avg. recall: 0.79447, avg. number of preds: 1.74
+cutoff = 0.3, avg. accuracy: 0.69550, avg. recall: 0.85121, avg. number of preds: 2.23
+cutoff = 0.2, avg. accuracy: 0.63496, avg. recall: 0.90402, avg. number of preds: 3.14
+cutoff = 0.1, avg. accuracy: 0.51960, avg. recall: 0.94969, avg. number of preds: 5.69
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56859, avg. recall: 0.59149, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.61077, avg. recall: 0.70893, avg. number of preds: 1.98
+cutoff = 0.3, avg. accuracy: 0.56148, avg. recall: 0.80929, avg. number of preds: 3.16
+cutoff = 0.2, avg. accuracy: 0.43897, avg. recall: 0.88872, avg. number of preds: 5.59
+cutoff = 0.1, avg. accuracy: 0.24170, avg. recall: 0.95098, avg. number of preds: 15.33
+--------------------
+std of solvent:  0.7654755115509033
+std of reagent:  1.2472845315933228
+--------------------------------------------------
+
+Learning Rate: [0.00020530250433300066]
+--------------- Validate ---------------
+
+epoch: 86
+Overall two tasks of validation avg_BCE_loss: 3.83541
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69658, avg. recall: 0.72972, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71751, avg. recall: 0.79515, avg. number of preds: 1.74
+cutoff = 0.3, avg. accuracy: 0.69688, avg. recall: 0.85041, avg. number of preds: 2.23
+cutoff = 0.2, avg. accuracy: 0.63840, avg. recall: 0.90260, avg. number of preds: 3.11
+cutoff = 0.1, avg. accuracy: 0.52255, avg. recall: 0.94766, avg. number of preds: 5.63
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56949, avg. recall: 0.59192, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.61225, avg. recall: 0.70931, avg. number of preds: 1.97
+cutoff = 0.3, avg. accuracy: 0.56365, avg. recall: 0.80910, avg. number of preds: 3.14
+cutoff = 0.2, avg. accuracy: 0.43930, avg. recall: 0.88884, avg. number of preds: 5.59
+cutoff = 0.1, avg. accuracy: 0.24159, avg. recall: 0.95071, avg. number of preds: 15.35
+--------------------
+std of solvent:  0.7627964615821838
+std of reagent:  1.2461081743240356
+--------------------------------------------------
+
+Learning Rate: [0.0001956865216628627]
+--------------- Validate ---------------
+
+epoch: 87
+Overall two tasks of validation avg_BCE_loss: 3.86045
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69578, avg. recall: 0.72887, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71727, avg. recall: 0.79386, avg. number of preds: 1.74
+cutoff = 0.3, avg. accuracy: 0.69744, avg. recall: 0.85111, avg. number of preds: 2.22
+cutoff = 0.2, avg. accuracy: 0.63915, avg. recall: 0.90283, avg. number of preds: 3.12
+cutoff = 0.1, avg. accuracy: 0.52441, avg. recall: 0.94792, avg. number of preds: 5.66
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56663, avg. recall: 0.58848, avg. number of preds: 1.27
+cutoff = 0.4, avg. accuracy: 0.61224, avg. recall: 0.70586, avg. number of preds: 1.95
+cutoff = 0.3, avg. accuracy: 0.56496, avg. recall: 0.80783, avg. number of preds: 3.12
+cutoff = 0.2, avg. accuracy: 0.44166, avg. recall: 0.88727, avg. number of preds: 5.55
+cutoff = 0.1, avg. accuracy: 0.24415, avg. recall: 0.95037, avg. number of preds: 15.16
+--------------------
+std of solvent:  0.7605958580970764
+std of reagent:  1.2432602643966675
+--------------------------------------------------
+
+Learning Rate: [0.0001865209335118409]
+--------------- Validate ---------------
+
+epoch: 88
+Overall two tasks of validation avg_BCE_loss: 3.88361
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69693, avg. recall: 0.72935, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71733, avg. recall: 0.79318, avg. number of preds: 1.74
+cutoff = 0.3, avg. accuracy: 0.69788, avg. recall: 0.84994, avg. number of preds: 2.21
+cutoff = 0.2, avg. accuracy: 0.63930, avg. recall: 0.90224, avg. number of preds: 3.10
+cutoff = 0.1, avg. accuracy: 0.52620, avg. recall: 0.94721, avg. number of preds: 5.60
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56887, avg. recall: 0.59206, avg. number of preds: 1.28
+cutoff = 0.4, avg. accuracy: 0.61320, avg. recall: 0.70903, avg. number of preds: 1.96
+cutoff = 0.3, avg. accuracy: 0.56566, avg. recall: 0.80956, avg. number of preds: 3.13
+cutoff = 0.2, avg. accuracy: 0.44231, avg. recall: 0.88719, avg. number of preds: 5.54
+cutoff = 0.1, avg. accuracy: 0.24319, avg. recall: 0.95021, avg. number of preds: 15.20
+--------------------
+std of solvent:  0.7573149800300598
+std of reagent:  1.240667462348938
+--------------------------------------------------
+
+Learning Rate: [0.0001777846442488584]
+--------------- Validate ---------------
+
+epoch: 89
+Overall two tasks of validation avg_BCE_loss: 3.92761
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69663, avg. recall: 0.73047, avg. number of preds: 1.43
+cutoff = 0.4, avg. accuracy: 0.71778, avg. recall: 0.79410, avg. number of preds: 1.74
+cutoff = 0.3, avg. accuracy: 0.69948, avg. recall: 0.85065, avg. number of preds: 2.21
+cutoff = 0.2, avg. accuracy: 0.64206, avg. recall: 0.90184, avg. number of preds: 3.07
+cutoff = 0.1, avg. accuracy: 0.52879, avg. recall: 0.94642, avg. number of preds: 5.56
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.57045, avg. recall: 0.59345, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.61378, avg. recall: 0.70845, avg. number of preds: 1.95
+cutoff = 0.3, avg. accuracy: 0.56656, avg. recall: 0.80877, avg. number of preds: 3.10
+cutoff = 0.2, avg. accuracy: 0.44576, avg. recall: 0.88665, avg. number of preds: 5.43
+cutoff = 0.1, avg. accuracy: 0.24800, avg. recall: 0.94922, avg. number of preds: 14.82
+--------------------
+std of solvent:  0.7549134492874146
+std of reagent:  1.2391669750213623
+--------------------------------------------------
+
+Learning Rate: [0.0001694575463224701]
+--------------- Validate ---------------
+
+epoch: 90
+Overall two tasks of validation avg_BCE_loss: 3.92293
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69620, avg. recall: 0.73019, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71693, avg. recall: 0.79313, avg. number of preds: 1.74
+cutoff = 0.3, avg. accuracy: 0.69879, avg. recall: 0.85047, avg. number of preds: 2.21
+cutoff = 0.2, avg. accuracy: 0.64155, avg. recall: 0.90135, avg. number of preds: 3.09
+cutoff = 0.1, avg. accuracy: 0.52753, avg. recall: 0.94615, avg. number of preds: 5.60
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56701, avg. recall: 0.58877, avg. number of preds: 1.27
+cutoff = 0.4, avg. accuracy: 0.61359, avg. recall: 0.70661, avg. number of preds: 1.94
+cutoff = 0.3, avg. accuracy: 0.56764, avg. recall: 0.80801, avg. number of preds: 3.10
+cutoff = 0.2, avg. accuracy: 0.44660, avg. recall: 0.88635, avg. number of preds: 5.47
+cutoff = 0.1, avg. accuracy: 0.24837, avg. recall: 0.94978, avg. number of preds: 14.93
+--------------------
+std of solvent:  0.7525887489318848
+std of reagent:  1.2363097667694092
+--------------------------------------------------
+
+Learning Rate: [0.00016152047398107323]
+--------------- Validate ---------------
+
+epoch: 91
+Overall two tasks of validation avg_BCE_loss: 3.97023
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69631, avg. recall: 0.72948, avg. number of preds: 1.43
+cutoff = 0.4, avg. accuracy: 0.71686, avg. recall: 0.79262, avg. number of preds: 1.73
+cutoff = 0.3, avg. accuracy: 0.69863, avg. recall: 0.84848, avg. number of preds: 2.20
+cutoff = 0.2, avg. accuracy: 0.64299, avg. recall: 0.90038, avg. number of preds: 3.06
+cutoff = 0.1, avg. accuracy: 0.53189, avg. recall: 0.94544, avg. number of preds: 5.51
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.57156, avg. recall: 0.59406, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.61380, avg. recall: 0.70922, avg. number of preds: 1.96
+cutoff = 0.3, avg. accuracy: 0.56737, avg. recall: 0.80958, avg. number of preds: 3.11
+cutoff = 0.2, avg. accuracy: 0.44430, avg. recall: 0.88703, avg. number of preds: 5.49
+cutoff = 0.1, avg. accuracy: 0.24751, avg. recall: 0.94993, avg. number of preds: 15.08
+--------------------
+std of solvent:  0.7499395608901978
+std of reagent:  1.234562635421753
+--------------------------------------------------
+
+Learning Rate: [0.0001539551591607766]
+--------------- Validate ---------------
+
+epoch: 92
+Overall two tasks of validation avg_BCE_loss: 4.00028
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69638, avg. recall: 0.72953, avg. number of preds: 1.43
+cutoff = 0.4, avg. accuracy: 0.71702, avg. recall: 0.79196, avg. number of preds: 1.73
+cutoff = 0.3, avg. accuracy: 0.70031, avg. recall: 0.84818, avg. number of preds: 2.19
+cutoff = 0.2, avg. accuracy: 0.64420, avg. recall: 0.89885, avg. number of preds: 3.05
+cutoff = 0.1, avg. accuracy: 0.53309, avg. recall: 0.94469, avg. number of preds: 5.50
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.57004, avg. recall: 0.59225, avg. number of preds: 1.28
+cutoff = 0.4, avg. accuracy: 0.61444, avg. recall: 0.70733, avg. number of preds: 1.95
+cutoff = 0.3, avg. accuracy: 0.57057, avg. recall: 0.80743, avg. number of preds: 3.09
+cutoff = 0.2, avg. accuracy: 0.44832, avg. recall: 0.88582, avg. number of preds: 5.47
+cutoff = 0.1, avg. accuracy: 0.25108, avg. recall: 0.94891, avg. number of preds: 14.91
+--------------------
+std of solvent:  0.7478417158126831
+std of reagent:  1.2323565483093262
+--------------------------------------------------
+
+Learning Rate: [0.00014674418943939852]
+--------------- Validate ---------------
+
+epoch: 93
+Overall two tasks of validation avg_BCE_loss: 4.00169
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69646, avg. recall: 0.72985, avg. number of preds: 1.43
+cutoff = 0.4, avg. accuracy: 0.71660, avg. recall: 0.79105, avg. number of preds: 1.73
+cutoff = 0.3, avg. accuracy: 0.70062, avg. recall: 0.84870, avg. number of preds: 2.20
+cutoff = 0.2, avg. accuracy: 0.64430, avg. recall: 0.90055, avg. number of preds: 3.06
+cutoff = 0.1, avg. accuracy: 0.53288, avg. recall: 0.94543, avg. number of preds: 5.50
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.57120, avg. recall: 0.59480, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.61434, avg. recall: 0.70983, avg. number of preds: 1.96
+cutoff = 0.3, avg. accuracy: 0.56901, avg. recall: 0.80833, avg. number of preds: 3.11
+cutoff = 0.2, avg. accuracy: 0.44694, avg. recall: 0.88527, avg. number of preds: 5.48
+cutoff = 0.1, avg. accuracy: 0.25075, avg. recall: 0.94845, avg. number of preds: 14.89
+--------------------
+std of solvent:  0.746016263961792
+std of reagent:  1.2307132482528687
+--------------------------------------------------
+
+Learning Rate: [0.00013987096795982075]
+--------------- Validate ---------------
+
+epoch: 94
+Overall two tasks of validation avg_BCE_loss: 4.03729
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69526, avg. recall: 0.72872, avg. number of preds: 1.43
+cutoff = 0.4, avg. accuracy: 0.71769, avg. recall: 0.79160, avg. number of preds: 1.73
+cutoff = 0.3, avg. accuracy: 0.70076, avg. recall: 0.84803, avg. number of preds: 2.19
+cutoff = 0.2, avg. accuracy: 0.64566, avg. recall: 0.89933, avg. number of preds: 3.03
+cutoff = 0.1, avg. accuracy: 0.53561, avg. recall: 0.94451, avg. number of preds: 5.43
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.57275, avg. recall: 0.59551, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.61408, avg. recall: 0.70993, avg. number of preds: 1.96
+cutoff = 0.3, avg. accuracy: 0.56996, avg. recall: 0.80855, avg. number of preds: 3.09
+cutoff = 0.2, avg. accuracy: 0.44812, avg. recall: 0.88558, avg. number of preds: 5.42
+cutoff = 0.1, avg. accuracy: 0.25228, avg. recall: 0.94867, avg. number of preds: 14.68
+--------------------
+std of solvent:  0.7439242005348206
+std of reagent:  1.229481816291809
+--------------------------------------------------
+
+Learning Rate: [0.00013331967523045652]
+--------------- Validate ---------------
+
+epoch: 95
+Overall two tasks of validation avg_BCE_loss: 4.07725
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69477, avg. recall: 0.72825, avg. number of preds: 1.43
+cutoff = 0.4, avg. accuracy: 0.71821, avg. recall: 0.79130, avg. number of preds: 1.72
+cutoff = 0.3, avg. accuracy: 0.70180, avg. recall: 0.84757, avg. number of preds: 2.17
+cutoff = 0.2, avg. accuracy: 0.64700, avg. recall: 0.89787, avg. number of preds: 3.01
+cutoff = 0.1, avg. accuracy: 0.53901, avg. recall: 0.94290, avg. number of preds: 5.36
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.56994, avg. recall: 0.59192, avg. number of preds: 1.28
+cutoff = 0.4, avg. accuracy: 0.61483, avg. recall: 0.70758, avg. number of preds: 1.93
+cutoff = 0.3, avg. accuracy: 0.57112, avg. recall: 0.80619, avg. number of preds: 3.06
+cutoff = 0.2, avg. accuracy: 0.45198, avg. recall: 0.88405, avg. number of preds: 5.36
+cutoff = 0.1, avg. accuracy: 0.25458, avg. recall: 0.94766, avg. number of preds: 14.55
+--------------------
+std of solvent:  0.7422100901603699
+std of reagent:  1.227425456047058
+--------------------------------------------------
+
+Learning Rate: [0.0001270752327149133]
+--------------- Validate ---------------
+
+epoch: 96
+Overall two tasks of validation avg_BCE_loss: 4.06973
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69579, avg. recall: 0.72828, avg. number of preds: 1.42
+cutoff = 0.4, avg. accuracy: 0.71854, avg. recall: 0.79090, avg. number of preds: 1.73
+cutoff = 0.3, avg. accuracy: 0.70105, avg. recall: 0.84647, avg. number of preds: 2.18
+cutoff = 0.2, avg. accuracy: 0.64609, avg. recall: 0.89769, avg. number of preds: 3.03
+cutoff = 0.1, avg. accuracy: 0.53812, avg. recall: 0.94426, avg. number of preds: 5.41
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.57123, avg. recall: 0.59367, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.61537, avg. recall: 0.70950, avg. number of preds: 1.96
+cutoff = 0.3, avg. accuracy: 0.57038, avg. recall: 0.80705, avg. number of preds: 3.08
+cutoff = 0.2, avg. accuracy: 0.44997, avg. recall: 0.88482, avg. number of preds: 5.41
+cutoff = 0.1, avg. accuracy: 0.25291, avg. recall: 0.94817, avg. number of preds: 14.76
+--------------------
+std of solvent:  0.7406032085418701
+std of reagent:  1.2258867025375366
+--------------------------------------------------
+
+Learning Rate: [0.00012112326812704669]
+--------------- Validate ---------------
+
+epoch: 97
+Overall two tasks of validation avg_BCE_loss: 4.09534
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69582, avg. recall: 0.72904, avg. number of preds: 1.43
+cutoff = 0.4, avg. accuracy: 0.71739, avg. recall: 0.79019, avg. number of preds: 1.73
+cutoff = 0.3, avg. accuracy: 0.70181, avg. recall: 0.84735, avg. number of preds: 2.18
+cutoff = 0.2, avg. accuracy: 0.64683, avg. recall: 0.89731, avg. number of preds: 3.02
+cutoff = 0.1, avg. accuracy: 0.54032, avg. recall: 0.94427, avg. number of preds: 5.40
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.57143, avg. recall: 0.59426, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.61487, avg. recall: 0.70787, avg. number of preds: 1.95
+cutoff = 0.3, avg. accuracy: 0.57121, avg. recall: 0.80676, avg. number of preds: 3.08
+cutoff = 0.2, avg. accuracy: 0.45184, avg. recall: 0.88376, avg. number of preds: 5.43
+cutoff = 0.1, avg. accuracy: 0.25452, avg. recall: 0.94829, avg. number of preds: 14.88
+--------------------
+std of solvent:  0.7388163805007935
+std of reagent:  1.224377155303955
+--------------------------------------------------
+
+Learning Rate: [0.00011545008235152893]
+--------------- Validate ---------------
+
+epoch: 98
+Overall two tasks of validation avg_BCE_loss: 4.11095
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69738, avg. recall: 0.73055, avg. number of preds: 1.43
+cutoff = 0.4, avg. accuracy: 0.71684, avg. recall: 0.78907, avg. number of preds: 1.73
+cutoff = 0.3, avg. accuracy: 0.70240, avg. recall: 0.84761, avg. number of preds: 2.18
+cutoff = 0.2, avg. accuracy: 0.64724, avg. recall: 0.89660, avg. number of preds: 3.01
+cutoff = 0.1, avg. accuracy: 0.54000, avg. recall: 0.94350, avg. number of preds: 5.37
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.57002, avg. recall: 0.59333, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.61507, avg. recall: 0.70625, avg. number of preds: 1.93
+cutoff = 0.3, avg. accuracy: 0.57253, avg. recall: 0.80547, avg. number of preds: 3.04
+cutoff = 0.2, avg. accuracy: 0.45461, avg. recall: 0.88268, avg. number of preds: 5.33
+cutoff = 0.1, avg. accuracy: 0.25722, avg. recall: 0.94774, avg. number of preds: 14.52
+--------------------
+std of solvent:  0.737418532371521
+std of reagent:  1.222696304321289
+--------------------------------------------------
+
+Learning Rate: [0.00011004261791379557]
+--------------- Validate ---------------
+
+epoch: 99
+Overall two tasks of validation avg_BCE_loss: 4.15925
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69763, avg. recall: 0.73053, avg. number of preds: 1.43
+cutoff = 0.4, avg. accuracy: 0.71745, avg. recall: 0.78962, avg. number of preds: 1.72
+cutoff = 0.3, avg. accuracy: 0.70188, avg. recall: 0.84533, avg. number of preds: 2.17
+cutoff = 0.2, avg. accuracy: 0.64945, avg. recall: 0.89555, avg. number of preds: 2.99
+cutoff = 0.1, avg. accuracy: 0.54359, avg. recall: 0.94280, avg. number of preds: 5.31
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.57179, avg. recall: 0.59449, avg. number of preds: 1.28
+cutoff = 0.4, avg. accuracy: 0.61580, avg. recall: 0.70715, avg. number of preds: 1.93
+cutoff = 0.3, avg. accuracy: 0.57191, avg. recall: 0.80570, avg. number of preds: 3.06
+cutoff = 0.2, avg. accuracy: 0.45304, avg. recall: 0.88433, avg. number of preds: 5.38
+cutoff = 0.1, avg. accuracy: 0.25518, avg. recall: 0.94806, avg. number of preds: 14.68
+--------------------
+std of solvent:  0.7356993556022644
+std of reagent:  1.2210215330123901
+--------------------------------------------------
+
+Learning Rate: [0.00010488842892680047]
+--------------- Validate ---------------
+
+epoch: 100
+Overall two tasks of validation avg_BCE_loss: 4.14831
+Solvent task 1:
+cutoff = 0.5, avg. accuracy: 0.69708, avg. recall: 0.73070, avg. number of preds: 1.43
+cutoff = 0.4, avg. accuracy: 0.71781, avg. recall: 0.79071, avg. number of preds: 1.73
+cutoff = 0.3, avg. accuracy: 0.70228, avg. recall: 0.84620, avg. number of preds: 2.17
+cutoff = 0.2, avg. accuracy: 0.64831, avg. recall: 0.89614, avg. number of preds: 3.00
+cutoff = 0.1, avg. accuracy: 0.54219, avg. recall: 0.94286, avg. number of preds: 5.35
+
+Reagent task 2:
+cutoff = 0.5, avg. accuracy: 0.57317, avg. recall: 0.59658, avg. number of preds: 1.29
+cutoff = 0.4, avg. accuracy: 0.61535, avg. recall: 0.70803, avg. number of preds: 1.94
+cutoff = 0.3, avg. accuracy: 0.57299, avg. recall: 0.80713, avg. number of preds: 3.06
+cutoff = 0.2, avg. accuracy: 0.45470, avg. recall: 0.88354, avg. number of preds: 5.34
+cutoff = 0.1, avg. accuracy: 0.25729, avg. recall: 0.94791, avg. number of preds: 14.50
+--------------------
+std of solvent:  0.7344135046005249
+std of reagent:  1.2198905944824219
+--------------------------------------------------
+

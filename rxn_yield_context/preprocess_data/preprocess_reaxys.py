@@ -37,7 +37,7 @@ if __name__ == "__main__":
     parser.add_argument('--input_dir',type=str,
                         default='../../Data_From_Reaxys_Original')
     parser.add_argument('--output_dir',type=str,
-                        default='../All_LCC_Data/processed_data_test')
+                        default='../All_LCC_Data/processed_data_12')
     args = parser.parse_args()
     
     input_file_path = args.input_dir
